@@ -1,0 +1,103 @@
+/**
+ * @example scss
+ *
+ * .element {
+ *   @include clearfix;
+ * }
+ *
+ * // CSS Output
+ * .element::after {
+ *   clear: both;
+ *   content: '';
+ *   display: block;
+ * }
+ */
+
+@mixin clearfix {
+  &::after {
+    clear: both;
+    content: "";
+    display: block;
+  }
+}
+
+/**
+ * Truncate text and add an ellipsis to represent overflow
+ *
+ * @param {number} $width [Default 100%]
+ * @param {string} $display [Default inline-block] [Sets the display-value of the element]
+ */
+@mixin ellipsis($width: 100%, $display: inline-block) {
+  display: $display;
+  max-width: $width;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+
+/**
+ * Hides text to show a background image(a logo, for example)
+ *
+ * @example
+ *   .element {
+ *     @include hide-text;
+ *   }
+ *
+ *   // CSS Output
+ *   .element {
+ *     overflow: hidden;
+ *     text-indent: 101%;
+ *     white-space: nowrap;
+ *   }
+ */
+
+@mixin hide-text {
+  overflow: hidden;
+  text-indent: 101%;
+  white-space: nowrap;
+}
+
+/**
+ * Mixes a color with black. It's different from darken()
+ *
+ * @param {color} $color
+ * @param {number (percentage)} $percent [The amount of black to be mixed in]
+ * @return {color}
+ *
+ * @example
+ *   .element {
+ *     background-color: shade(#ffbb52, 60%);
+ *   }
+ *
+ *   // CSS Output
+ *   .element {
+ *     background-color: #664a20;
+ *   }
+ */
+
+@function shade($color, $percent) {
+  @return mix(#000, $color, $percent);
+}
+
+/**
+ * Set width and height in a single statement
+ *
+ * @param {number (with unit) | string} $width
+ * @param {number (with unit) | string} $height [default $width]
+ */
+
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin no-scrollbar {
+  &::-webkit-scrollbar {
+    width: 0 !important;
+    background: transparent;  /* optional: just make scrollbar invisible */
+  }
+  -ms-overflow-style: none; /* IE 11 */
+  overflow: -moz-scrollbars-none;
+  scrollbar-width: none; /* Firefox 64 */
+}

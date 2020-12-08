@@ -1,0 +1,121 @@
+/**
+ * Mixes a color with white. It's different from lighten()
+ *
+ * @param {color} $color
+ * @param {number (percentage)} $percent [The amout of white to be mixed in]
+ * @return {color}
+ *
+ * @example
+ *   .element {
+ *     background-color: tint(#6ecaa6 , 40%);
+ *   }
+ *
+ *   // CSS Output
+ *   .element {
+ *     background-color: #a8dfc9;
+ *   }
+ */
+@import "../../colors/tinycolor";
+
+$hueStep: 2;
+$saturationStep: 16; // 饱和度阶梯，浅色部分
+$saturationStep2: 5; // 饱和度阶梯，深色部分
+$brightnessStep1: 5; // 亮度阶梯，浅色部分
+$brightnessStep2: 15; // 亮度阶梯，深色部分
+$lightColorCount: 5; // 浅色数量，主色上
+$darkColorCount: 4; // 深色数量，主色下
+
+@function tint(
+  $color,
+  $percent
+) {
+  @return mix(#FFF, $color, $percent);
+}
+
+@function getHue($h,$s,$v,$i,$light) {
+  $hue: null;
+  @if ($h >= 60  and $h <= 240) {
+    @if ($light == true) {
+      $hue: $h - $hueStep * $i
+    } @else {
+      $hue: $h + $hueStep * $i
+    }
+  } @else {
+    @if ($light == true) {
+      $hue: $h + $hueStep * $i
+    } @else {
+      $hue: $h - $hueStep * $i
+    }
+  }
+  @if ($hue < 0) {
+    $hue: $hue + 360;
+  } @else if ($hue >= 360) {
+    $hue: $hue - 360;
+  }
+
+  @return $hue
+}
+
+@function getSaturation($h,$s,$v, $i, $light) {
+  $saturation: 0;
+  // grey color don't change saturation
+  @if ($h == 0 and $s == 0) {
+    @return $s;
+  }
+  @if ($light == true) {
+    $saturation: $s  - $saturationStep * $i;
+  } @else if ($i == $darkColorCount) {
+    $saturation: $s  + $saturationStep;
+  } @else {
+    $saturation: $s  + $saturationStep2 * $i;
+  }
+  // 边界值修正
+  @if ($saturation > 100) {
+    $saturation: 100;
+  }
+
+  // 第一格的 s 限制在 6-10 之间
+  @if ($light == true and $i == $lightColorCount and $saturation > 10) {
+    $saturation: 10;
+  }
+  @if ($saturation < 6) {
+    $saturation: 6;
+  }
+  @return round($saturation);
+}
+
+@function getValue($h,$s,$v, $i, $light) {
+  @if ($light == true) {
+    @return ($v   + $brightnessStep1 * $i) ;
+  }
+  @return ($v  - $brightnessStep2 * $i) ;
+}
+
+
+@function generateColor($color,$level,$light) {
+
+  $hsv: ch-color-to-hsv($color);
+
+  $v: nth($hsv, 3);
+  $s: nth($hsv, 2);
+  $h: nth($hsv, 1);
+
+  //@debug $h, $s, $v ;
+
+  $adjustHue: round(getHue($h, $s, $v, $level, $light));
+  $adjustSaturation: getSaturation($h, $s, $v, $level, $light);
+  $adjustLight: getValue($h, $s, $v, $level, $light);
+  //@debug $h;
+  //@debug $s;
+  //@debug $v;
+  //@debug $adjustHue, $adjustSaturation, $adjustLight;
+  @return ch-hsv-to-color($adjustHue, $adjustSaturation, $adjustLight);
+}
+
+
+@function tint_black(
+  $color,
+  $percent
+) {
+  @return mix(#000, $color, $percent);
+}

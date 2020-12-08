@@ -1,0 +1,15 @@
+@import "../theme.scss";
+$prefixCls: "xy";
+.xy-scroller{
+  &{
+    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  &-inner{
+    height: auto;
+    &.#{$prefixCls}-hidden-bar{
+      @include no-scrollbar;
+    }
+  }
+}
