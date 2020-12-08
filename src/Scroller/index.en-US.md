@@ -26,7 +26,7 @@ open http://localhost:6006/?path=/story/scroller
 ## Usage
 
 ```ts
-import Scroller from "xy-components";
+import Scroller from "xy-element";
 
 <Scroller
   hasMore={hasMore}

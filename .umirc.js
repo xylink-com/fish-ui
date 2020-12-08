@@ -5,19 +5,19 @@ export default {
     exclude: [],
   },
   outputPath: "/docs",
-  base: "/xy-components",
-  publicPath: "/xy-components/",
+  base: "/xy-element",
+  publicPath: "/xy-element/",
   mode: 'site',
-  title: 'xy-components',
-  favicon: '/xy-components/favicon.ico',
-  logo: '/xy-components/logo.png',
+  title: 'xy-element',
+  favicon: '/xy-element/favicon.ico',
+  logo: '/xy-element/logo.png',
   dynamicImport: {},
   manifest: {},
   hash: true,
   resolve: {
     includes: ['guide', 'src'],
   },
-  links: [{ rel: 'stylesheet', href: '/xy-components/style.css' }],
+  links: [{ rel: 'stylesheet', href: '/xy-element/style.css' }],
   navs: {
     'zh-CN': [
       // 加载默认的 nav 选项

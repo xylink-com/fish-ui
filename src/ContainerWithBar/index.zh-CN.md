@@ -26,7 +26,7 @@ open http://localhost:6006/?path=/story/containerwithbar
 ## Usage
 
 ```ts
-import ContainerWithBar from "xy-components";
+import ContainerWithBar from "xy-element";
 
 <ContainerWithBar
   style={{

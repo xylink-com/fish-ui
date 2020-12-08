@@ -9,7 +9,7 @@ export function getRoutes() {
   {
     "path": "/",
     "component": (props) => require('react').createElement(require('../../../node_modules/@umijs/preset-dumi/lib/themes/default/layout.js').default, {
-      ...{"menus":{"en-US":{"*":[{"path":"/","title":"xy-hooks - React Hooks Library","meta":{}}],"/pages":[{"path":"/pages/getting-started","title":"Getting Started","meta":{"order":1}},{"path":"/pages/api","title":"API Standards","meta":{}},{"path":"/pages/faq","title":"FAQ","meta":{}}],"/components":[{"title":"Scroll","path":"/components/scroll","meta":{},"children":[{"path":"/components/scroll/container-with-bar","title":"ContainerWithBar","meta":{}},{"path":"/components/scroll/scroller","title":"Scroller","meta":{}}]}]},"zh-CN":{"*":[{"path":"/zh-CN","title":"xy-hooks - React Hooks Library","meta":{}}],"/zh-CN/pages":[{"path":"/zh-CN/pages/getting-started","title":"快速上手","meta":{"order":1}},{"path":"/zh-CN/pages/api","title":"API 规范","meta":{}},{"path":"/zh-CN/pages/faq","title":"FAQ","meta":{}}],"/zh-CN/components":[{"title":"Scroll","path":"/zh-CN/components/scroll","meta":{},"children":[{"path":"/zh-CN/components/scroll/container-with-bar","title":"ContainerWithBar","meta":{}},{"path":"/zh-CN/components/scroll/scroller","title":"Scroller","meta":{}}]}]}},"locales":[{"name":"en-US","label":"English"},{"name":"zh-CN","label":"中文"}],"navs":{"en-US":[{"path":"/pages","title":"Guide","order":1},{"title":"Components","path":"/components"}],"zh-CN":[{"path":"/zh-CN/pages","title":"指南","order":1},{"title":"Components","path":"/zh-CN/components"}]},"title":"xy-components","logo":"/xy-components/logo.png","mode":"site","repoUrl":"git+"},
+      ...{"menus":{"en-US":{"*":[{"path":"/","title":"xy-element","meta":{}}],"/pages":[{"path":"/pages/getting-started","title":"Getting Started","meta":{"order":1}},{"path":"/pages/api","title":"API Standards","meta":{}},{"path":"/pages/faq","title":"FAQ","meta":{}}],"/components":[{"title":"Scroll","path":"/components/scroll","meta":{},"children":[{"path":"/components/scroll/container-with-bar","title":"ContainerWithBar","meta":{}},{"path":"/components/scroll/scroller","title":"Scroller","meta":{}}]}]},"zh-CN":{"*":[{"path":"/zh-CN","title":"xy-element","meta":{}}],"/zh-CN/pages":[{"path":"/zh-CN/pages/getting-started","title":"快速上手","meta":{"order":1}},{"path":"/zh-CN/pages/api","title":"API 规范","meta":{}},{"path":"/zh-CN/pages/faq","title":"FAQ","meta":{}}],"/zh-CN/components":[{"title":"Scroll","path":"/zh-CN/components/scroll","meta":{},"children":[{"path":"/zh-CN/components/scroll/container-with-bar","title":"ContainerWithBar","meta":{}},{"path":"/zh-CN/components/scroll/scroller","title":"Scroller","meta":{}}]}]}},"locales":[{"name":"en-US","label":"English"},{"name":"zh-CN","label":"中文"}],"navs":{"en-US":[{"path":"/pages","title":"Guide","order":1},{"title":"Components","path":"/components"}],"zh-CN":[{"path":"/zh-CN/pages","title":"指南","order":1},{"title":"Components","path":"/zh-CN/components"}]},"title":"xy-element","logo":"/xy-element/logo.png","mode":"site","repoUrl":"git+"},
       ...props,
     }),
     "routes": [
@@ -19,7 +19,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "guide/index.en-US.md",
-          "updatedTime": 1607394618209,
+          "updatedTime": 1607395275000,
           "title": "xy-hooks - React Hooks Library",
           "hero": {
             "title": "a hooks library",
@@ -66,7 +66,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "guide/index.zh-CN.md",
-          "updatedTime": 1607394618212,
+          "updatedTime": 1607395275000,
           "title": "xy-hooks - React Hooks Library",
           "hero": {
             "title": "a hooks library",
@@ -113,7 +113,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "guide/pages/api.en-US.md",
-          "updatedTime": 1607394618214,
+          "updatedTime": 1607395275000,
           "slugs": [
             {
               "depth": 1,
@@ -201,7 +201,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "guide/pages/api.zh-CN.md",
-          "updatedTime": 1607394618215,
+          "updatedTime": 1607395275000,
           "slugs": [
             {
               "depth": 1,
@@ -289,7 +289,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "guide/pages/faq.en-US.md",
-          "updatedTime": 1607394618217,
+          "updatedTime": 1607395275000,
           "slugs": [
             {
               "depth": 1,
@@ -332,7 +332,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "guide/pages/faq.zh-CN.md",
-          "updatedTime": 1607394618218,
+          "updatedTime": 1607395275000,
           "slugs": [
             {
               "depth": 1,
@@ -375,7 +375,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "guide/pages/getting-started.en-US.md",
-          "updatedTime": 1607394618219,
+          "updatedTime": 1607395275000,
           "order": 1,
           "nav": {
             "title": "Guide",
@@ -400,7 +400,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "guide/pages/getting-started.zh-CN.md",
-          "updatedTime": 1607394618219,
+          "updatedTime": 1607395275000,
           "order": 1,
           "nav": {
             "title": "指南",
@@ -420,12 +420,100 @@ export function getRoutes() {
         "title": "快速上手"
       },
       {
+        "path": "/",
+        "component": dynamic({ loader: () => import(/* webpackChunkName: 'README.en-US.md' */'../../README.en-US.md')}),
+        "exact": true,
+        "meta": {
+          "filePath": "src/README.en-US.md",
+          "updatedTime": 1607397846455,
+          "slugs": [
+            {
+              "depth": 1,
+              "value": "xy-element",
+              "heading": "xy-element"
+            },
+            {
+              "depth": 2,
+              "value": "run",
+              "heading": "run"
+            },
+            {
+              "depth": 2,
+              "value": "build",
+              "heading": "build"
+            },
+            {
+              "depth": 2,
+              "value": "test",
+              "heading": "test"
+            },
+            {
+              "depth": 2,
+              "value": "generate component",
+              "heading": "generate-component"
+            },
+            {
+              "depth": 2,
+              "value": "widget list",
+              "heading": "widget-list"
+            }
+          ],
+          "title": "xy-element",
+          "locale": "en-US"
+        },
+        "title": "xy-element"
+      },
+      {
+        "path": "/zh-CN",
+        "component": dynamic({ loader: () => import(/* webpackChunkName: 'README.zh-CN.md' */'../../README.zh-CN.md')}),
+        "exact": true,
+        "meta": {
+          "filePath": "src/README.zh-CN.md",
+          "updatedTime": 1607397855106,
+          "slugs": [
+            {
+              "depth": 1,
+              "value": "xy-element",
+              "heading": "xy-element"
+            },
+            {
+              "depth": 2,
+              "value": "run",
+              "heading": "run"
+            },
+            {
+              "depth": 2,
+              "value": "build",
+              "heading": "build"
+            },
+            {
+              "depth": 2,
+              "value": "test",
+              "heading": "test"
+            },
+            {
+              "depth": 2,
+              "value": "generate component",
+              "heading": "generate-component"
+            },
+            {
+              "depth": 2,
+              "value": "widget list",
+              "heading": "widget-list"
+            }
+          ],
+          "title": "xy-element",
+          "locale": "zh-CN"
+        },
+        "title": "xy-element"
+      },
+      {
         "path": "/components/scroll/container-with-bar",
         "component": dynamic({ loader: () => import(/* webpackChunkName: 'ContainerWithBar__index.en-US.md' */'../../ContainerWithBar/index.en-US.md')}),
         "exact": true,
         "meta": {
           "filePath": "src/ContainerWithBar/index.en-US.md",
-          "updatedTime": 1607393838151,
+          "updatedTime": 1607395275000,
           "title": "ContainerWithBar",
           "nav": {
             "title": "Components",
@@ -493,7 +581,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "src/ContainerWithBar/index.zh-CN.md",
-          "updatedTime": 1607393838152,
+          "updatedTime": 1607395275000,
           "title": "ContainerWithBar",
           "nav": {
             "title": "Components",
@@ -561,7 +649,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "src/Scroller/index.en-US.md",
-          "updatedTime": 1607393838156,
+          "updatedTime": 1607395275000,
           "title": "Scroller",
           "nav": {
             "title": "Components",
@@ -624,7 +712,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "src/Scroller/index.en-US.md",
-          "updatedTime": 1607393838156,
+          "updatedTime": 1607395275000,
           "title": "Scroller",
           "nav": {
             "title": "Components",
@@ -728,7 +816,7 @@ export function getRoutes() {
         "redirect": "/zh-CN/components/scroll/scroller"
       }
     ],
-    "title": "xy-components"
+    "title": "xy-element"
   }
 ];
 

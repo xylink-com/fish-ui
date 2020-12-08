@@ -2,7 +2,7 @@
 import { createBrowserHistory } from '/Users/jonsam/Company/Projects/Components/xy-components/node_modules/@umijs/runtime';
 
 let options = {
-  "basename": "/xy-components"
+  "basename": "/xy-element"
 };
 if ((<any>window).routerBase) {
   options.basename = (<any>window).routerBase;
