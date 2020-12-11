@@ -4,8 +4,8 @@ import '@@/core/devScripts';
 import { plugin } from './core/plugin';
 import './core/pluginRegister';
 import { createHistory } from './core/history';
-import { ApplyPluginsType } from '/Users/jonsam/Company/Projects/Components/xy-components/node_modules/@umijs/runtime';
-import { renderClient } from '/Users/jonsam/Company/Projects/Components/xy-components/node_modules/@umijs/renderer-react/dist/index.js';
+import { ApplyPluginsType } from '/Users/jonsam/Company/Projects/Components/xy-element/node_modules/@umijs/runtime';
+import { renderClient } from '/Users/jonsam/Company/Projects/Components/xy-element/node_modules/@umijs/renderer-react/dist/index.js';
 import { getRoutes } from './core/routes';
 
 

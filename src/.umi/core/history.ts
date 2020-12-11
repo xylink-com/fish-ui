@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { createBrowserHistory } from '/Users/jonsam/Company/Projects/Components/xy-components/node_modules/@umijs/runtime';
+import { createBrowserHistory } from '/Users/jonsam/Company/Projects/Components/xy-element/node_modules/@umijs/runtime';
 
 let options = {
   "basename": "/xy-element"

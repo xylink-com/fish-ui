@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef, useMemo, forwardRef } from "react";
 import ScrollerProps from "./Scroller.types";
 import classnames from "classnames";
-import { useScrollPlus } from "xy-hooks";
+import { useScrollPlus } from "xy-hooks/packages/hooks";
 import useDebounceFn from "../hooks/useDebounceFn";
 import "./Scroller.scss";
 

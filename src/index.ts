@@ -1,11 +1,17 @@
 import Scroller, { ScrollerProps } from "./Scroller";
-import ScrollerWithBar, { ScrollerWithBarProps } from "./ScrollerWithBar";
+import ContainerWithBar, {
+  ContainerWithBarProps,
+  ScrollBar,
+  ScrollBarProps,
+} from "./ContainerWithBar/index";
 
 export {
   // Scroller
   Scroller,
   ScrollerProps,
-  // ScrollerWithBar
-  ScrollerWithBar,
-  ScrollerWithBarProps,
+  // ContainerWithBar
+  ContainerWithBar,
+  ContainerWithBarProps,
+  ScrollBar,
+  ScrollBarProps,
 };

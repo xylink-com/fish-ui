@@ -14,14 +14,8 @@ legacy: /scroll/container-with-bar
 A scroll container with custom scroll bar.
 
 ## Examples
-1.open story
 
-```bash
-yarn story
-```
-2.open examples
-
-open http://localhost:6006/?path=/story/containerwithbar
+<code src="./demo/basic.tsx" />
 
 ## Usage
 

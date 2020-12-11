@@ -11,6 +11,7 @@
   "scripts": {
     "init": "rm -rf node_modules && yarn && yarn build",
     "build": "rollup -c",
+    "b": "yarn build",
     "test": "jest",
     "test:watch": "jest --watch",
     "storybook": "start-storybook -p 6006",
@@ -18,15 +19,19 @@
     "storybook:export": "build-storybook",
     "generate": "node ./util/create-component",
     "gen": "node ./util/create-component",
-    "prepublishOnly": "npm run build",
+    "pub": "yarn publish",
+    "p": "yarn publish",
     "start": "yarn run dev",
     "dev": "dumi dev",
     "build:doc": "dumi build",
-    "pub:doc": "gh-pages -d docs"
+    "bd": "yarn build:doc",
+    "pub:doc": "gh-pages -d docs",
+    "pd": "gh-pages -d docs",
+    "go": "yarn b && yarn bd"
   },
   "repository": {
     "type": "git",
-    "url": "git+"
+    "url": "git+https://github.com/xylink-com/xy-element"
   },
   "keywords": [
     "React",
@@ -36,9 +41,9 @@
   "author": "xylink",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jonsam-ng/jonsam-react-widget.git/issues"
+    "url": "https://github.com/xylink-com/xy-element/issues"
   },
-  "homepage": "https://github.com/jonsam-ng/jonsam-react-widget#readme",
+  "homepage": "https://xylink-com.github.io/xy-element/",
   "peerDependencies": {
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0"

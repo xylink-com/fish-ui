@@ -27,19 +27,19 @@ export default {
     commonjs(),
     typescript({ useTsconfigDeclarationDir: true }),
     postcss(),
-    copy({
-      targets: [
-        {
-          src: "src/README.en-US.md",
-          dest: "/",
-          rename: "README.en-US.md"
-        },
-        {
-          src: "src/README.zh-CN.md",
-          dest: "/",
-          rename: "README.en-US.md"
-        }
-      ]
-    })
+    // copy({
+    //   targets: [
+    //     {
+    //       src: "src/README.en-US.md",
+    //       dest: "/",
+    //       rename: "README.en-US.md"
+    //     },
+    //     {
+    //       src: "src/README.zh-CN.md",
+    //       dest: "/",
+    //       rename: "README.en-US.md"
+    //     }
+    //   ]
+    // })
   ]
 };

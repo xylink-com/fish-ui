@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import classnames from "classnames";
 import ScrollBar from "./ScrollBar";
-import { useScrollPlus } from "xy-hooks";
+import { useScrollPlus } from "xy-hooks/packages/hooks";
 import ContainerWithBarProps from "./ContainerWithBar.types";
 import "./ContainerWithBar.scss";
 

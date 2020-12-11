@@ -1,4 +1,4 @@
-export interface ScrollBarProps {
+export default interface ScrollBarProps {
   className?: string;
   style?: React.CSSProperties;
   prefixCls?: string;

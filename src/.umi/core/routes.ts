@@ -1,15 +1,20 @@
 // @ts-nocheck
 import React from 'react';
-import { ApplyPluginsType, dynamic } from '/Users/jonsam/Company/Projects/Components/xy-components/node_modules/@umijs/runtime';
+import { ApplyPluginsType, dynamic } from '/Users/jonsam/Company/Projects/Components/xy-element/node_modules/@umijs/runtime';
 import * as umiExports from './umiExports';
 import { plugin } from './plugin';
 
 export function getRoutes() {
   const routes = [
   {
+    "path": "/_demos/basic",
+    "component": dynamic({ loader: () => import(/* webpackChunkName: 'ContainerWithBar__demo__basic' */'../../ContainerWithBar/demo/basic.tsx')}),
+    "exact": true
+  },
+  {
     "path": "/",
     "component": (props) => require('react').createElement(require('../../../node_modules/@umijs/preset-dumi/lib/themes/default/layout.js').default, {
-      ...{"menus":{"en-US":{"*":[{"path":"/","title":"xy-element","meta":{}}],"/pages":[{"path":"/pages/getting-started","title":"Getting Started","meta":{"order":1}},{"path":"/pages/api","title":"API Standards","meta":{}},{"path":"/pages/faq","title":"FAQ","meta":{}}],"/components":[{"title":"Scroll","path":"/components/scroll","meta":{},"children":[{"path":"/components/scroll/container-with-bar","title":"ContainerWithBar","meta":{}},{"path":"/components/scroll/scroller","title":"Scroller","meta":{}}]}]},"zh-CN":{"*":[{"path":"/zh-CN","title":"xy-element","meta":{}}],"/zh-CN/pages":[{"path":"/zh-CN/pages/getting-started","title":"快速上手","meta":{"order":1}},{"path":"/zh-CN/pages/api","title":"API 规范","meta":{}},{"path":"/zh-CN/pages/faq","title":"FAQ","meta":{}}],"/zh-CN/components":[{"title":"Scroll","path":"/zh-CN/components/scroll","meta":{},"children":[{"path":"/zh-CN/components/scroll/container-with-bar","title":"ContainerWithBar","meta":{}},{"path":"/zh-CN/components/scroll/scroller","title":"Scroller","meta":{}}]}]}},"locales":[{"name":"en-US","label":"English"},{"name":"zh-CN","label":"中文"}],"navs":{"en-US":[{"path":"/pages","title":"Guide","order":1},{"title":"Components","path":"/components"}],"zh-CN":[{"path":"/zh-CN/pages","title":"指南","order":1},{"title":"Components","path":"/zh-CN/components"}]},"title":"xy-element","logo":"/xy-element/logo.png","mode":"site","repoUrl":"git+"},
+      ...{"menus":{"en-US":{"*":[{"path":"/","title":"xy-element","meta":{}}],"/pages":[{"path":"/pages/getting-started","title":"Getting Started","meta":{"order":1}},{"path":"/pages/api","title":"API Standards","meta":{}},{"path":"/pages/faq","title":"FAQ","meta":{}}],"/components":[{"title":"Scroll","path":"/components/scroll","meta":{},"children":[{"path":"/components/scroll/container-with-bar","title":"ContainerWithBar","meta":{}},{"path":"/components/scroll/scroller","title":"Scroller","meta":{}}]}]},"zh-CN":{"*":[{"path":"/zh-CN","title":"xy-element","meta":{}}],"/zh-CN/pages":[{"path":"/zh-CN/pages/getting-started","title":"快速上手","meta":{"order":1}},{"path":"/zh-CN/pages/api","title":"API 规范","meta":{}},{"path":"/zh-CN/pages/faq","title":"FAQ","meta":{}}],"/zh-CN/components":[{"title":"Scroll","path":"/zh-CN/components/scroll","meta":{},"children":[{"path":"/zh-CN/components/scroll/container-with-bar","title":"ContainerWithBar","meta":{}},{"path":"/zh-CN/components/scroll/scroller","title":"Scroller","meta":{}}]}]}},"locales":[{"name":"en-US","label":"English"},{"name":"zh-CN","label":"中文"}],"navs":{"en-US":[{"path":"/pages","title":"Guide","order":1},{"title":"Components","path":"/components"}],"zh-CN":[{"path":"/zh-CN/pages","title":"指南","order":1},{"title":"Components","path":"/zh-CN/components"}]},"title":"xy-element","logo":"/xy-element/logo.png","mode":"site","repoUrl":"https://github.com/xylink-com/xy-element"},
       ...props,
     }),
     "routes": [
@@ -412,6 +417,11 @@ export function getRoutes() {
               "depth": 1,
               "value": "快速上手",
               "heading": "快速上手"
+            },
+            {
+              "depth": 2,
+              "value": "开发指南",
+              "heading": "开发指南"
             }
           ],
           "title": "快速上手",
@@ -425,7 +435,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "src/README.en-US.md",
-          "updatedTime": 1607397846455,
+          "updatedTime": 1607397942000,
           "slugs": [
             {
               "depth": 1,
@@ -469,7 +479,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "src/README.zh-CN.md",
-          "updatedTime": 1607397855106,
+          "updatedTime": 1607397942000,
           "slugs": [
             {
               "depth": 1,
@@ -513,7 +523,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "src/ContainerWithBar/index.en-US.md",
-          "updatedTime": 1607395275000,
+          "updatedTime": 1607397942000,
           "title": "ContainerWithBar",
           "nav": {
             "title": "Components",
@@ -581,7 +591,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "src/ContainerWithBar/index.zh-CN.md",
-          "updatedTime": 1607395275000,
+          "updatedTime": 1607397942000,
           "title": "ContainerWithBar",
           "nav": {
             "title": "Components",
@@ -649,7 +659,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "src/Scroller/index.en-US.md",
-          "updatedTime": 1607395275000,
+          "updatedTime": 1607397942000,
           "title": "Scroller",
           "nav": {
             "title": "Components",
@@ -712,7 +722,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "src/Scroller/index.en-US.md",
-          "updatedTime": 1607395275000,
+          "updatedTime": 1607397942000,
           "title": "Scroller",
           "nav": {
             "title": "Components",
