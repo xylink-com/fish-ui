@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef, useMemo } from "react";
 import classnames from "classnames";
-import ScrollBarProps from "../index.types";
+import ScrollBarProps from "./index.types";
 import "./index.scss";
 
 const ScrollBar: React.FC<ScrollBarProps> = (props) => {
@@ -53,21 +53,21 @@ const ScrollBar: React.FC<ScrollBarProps> = (props) => {
     }
   }, [translateY, pos]);
 
-  const handleMouseDown = (e: MouseEvent) => {
+  const handleMouseDown = (e: any) => {
     e.stopPropagation();
     isDragBar.current = true;
   };
 
-  const handleMouseUp = (e: MouseEvent) => {
+  const handleMouseUp = (e: any) => {
     isDragBar.current = false;
     lastY.current = null;
   };
 
-  const handleMouseMove = (e: MouseEvent) => {
+  const handleMouseMove = (e: any) => {
     if (isDragBar.current) handleMove(e);
   };
 
-  const handleMove = (e: MouseEvent) => {
+  const handleMove = (e: any) => {
     // translateY 是整数（px），要求scrollBarHeight也是整数。
     if (lastY.current) {
       let ty = e.clientY - lastY.current + translateY;

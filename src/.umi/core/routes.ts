@@ -303,16 +303,6 @@ export function getRoutes() {
             },
             {
               "depth": 3,
-              "value": "When I use ahooks, I get an error regeneratorRuntime is not defined, how can I solve it?",
-              "heading": "when-i-use-ahooks-i-get-an-error-regeneratorruntime-is-not-defined-how-can-i-solve-it"
-            },
-            {
-              "depth": 3,
-              "value": "I only want to use useRequest, but I have to install the entire ahooks?",
-              "heading": "i-only-want-to-use-userequest-but-i-have-to-install-the-entire-ahooks"
-            },
-            {
-              "depth": 3,
               "value": "I only want to use one or two of them, but all the hooks are compiled after the project is compiled.",
               "heading": "i-only-want-to-use-one-or-two-of-them-but-all-the-hooks-are-compiled-after-the-project-is-compiled"
             },
@@ -343,16 +333,6 @@ export function getRoutes() {
               "depth": 1,
               "value": "FAQ",
               "heading": "faq"
-            },
-            {
-              "depth": 3,
-              "value": "当我使用 ahooks 时，报错 regeneratorRuntime is not defined，如何解决？",
-              "heading": "当我使用-ahooks-时，报错-regeneratorruntime-is-not-defined，如何解决？"
-            },
-            {
-              "depth": 3,
-              "value": "我只想使用 useRquest， 但似乎我必须安装整个 ahooks？",
-              "heading": "我只想使用-userquest，-但似乎我必须安装整个-ahooks？"
             },
             {
               "depth": 3,

@@ -5,7 +5,7 @@ import { useScrollPlus } from "xy-hooks/packages/hooks";
 import useDebounceFn from "../hooks/useDebounceFn";
 import "./Scroller.scss";
 
-const Scroller: React.FC<ScrollerProps> = (props, ref) => {
+const Scroller: React.FC<ScrollerProps> = (props) => {
   const {
     hasMore = false,
     loadMore,
@@ -87,7 +87,6 @@ const Scroller: React.FC<ScrollerProps> = (props, ref) => {
       <div
         className={innerScrollerClasses}
         ref={innerScrollRef}
-        ref={ref}
         style={{ ...innerStyle }}
       >
         {children}
@@ -97,4 +96,4 @@ const Scroller: React.FC<ScrollerProps> = (props, ref) => {
   );
 };
 
-export default forwardRef(Scroller);
+export default Scroller;
