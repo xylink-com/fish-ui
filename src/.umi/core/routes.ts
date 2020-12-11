@@ -392,6 +392,11 @@ export function getRoutes() {
               "depth": 1,
               "value": "Getting Started",
               "heading": "getting-started"
+            },
+            {
+              "depth": 2,
+              "value": "Development Guide",
+              "heading": "development-guide"
             }
           ],
           "title": "Getting Started",
@@ -405,7 +410,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "guide/pages/getting-started.zh-CN.md",
-          "updatedTime": 1607395275000,
+          "updatedTime": 1607658257000,
           "order": 1,
           "nav": {
             "title": "指南",
@@ -523,7 +528,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "src/ContainerWithBar/index.en-US.md",
-          "updatedTime": 1607397942000,
+          "updatedTime": 1607658257000,
           "title": "ContainerWithBar",
           "nav": {
             "title": "Components",
@@ -591,7 +596,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "src/ContainerWithBar/index.zh-CN.md",
-          "updatedTime": 1607397942000,
+          "updatedTime": 1607658257000,
           "title": "ContainerWithBar",
           "nav": {
             "title": "Components",
