@@ -28,6 +28,10 @@ jobs:
       # Runs a single command using the runners shell
       - name: Publish docs
         run: |
+          echo Init and install dependence.
+          yarn init
+          echo Build static pages.
+          yarn bd
           echo Updating static pages.
           yarn pd
 
