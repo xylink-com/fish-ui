@@ -19,14 +19,26 @@ if (fs.existsSync(componentDirectory)) {
 }
 
 fs.mkdirSync(componentDirectory);
+fs.mkdirSync(`${componentDirectory}/demo`);
 
 const generatedTemplates = templates.map((template) => template(componentName));
 
 generatedTemplates.forEach((template) => {
-  fs.writeFileSync(
-    `${componentDirectory}/${componentName}${template.extension}`,
-    template.content
-  );
+  if (template.key === "genBasicDemo") {
+    fs.writeFileSync(
+      `${componentDirectory}/demo/${template.fileName || componentName}${
+        template.extension
+      }`,
+      template.content
+    );
+  } else {
+    fs.writeFileSync(
+      `${componentDirectory}/${template.fileName || componentName}${
+        template.extension
+      }`,
+      template.content
+    );
+  }
 });
 
 console.log(
