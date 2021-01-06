@@ -27,7 +27,7 @@ export default interface VideoPlayerProps {
   src: string | ISource[]
   width?: number | string;
   height?: number | string;
-  videoProps?: {};
+  videoProps?: {} | ;
   poster?: string;
   showPanel?: boolean;
   autoHidePanel?: boolean | IHidePanelOption;

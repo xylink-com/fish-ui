@@ -6,5 +6,5 @@
  * desc.zh-CN: 基础用法的描述。
  */
 
-import { Button } from '../Button.stories';
-export default () => <Button />;
+import { BasicButton } from '../Button.stories';
+export default () => <BasicButton />;

@@ -28,10 +28,15 @@ const VideoPlayer: React.FC<VideoPlayerProps> = (props) => {
     panelClassName = "",
     panelStyle = {},
     panelGap = 20,
-    panelHeight,
+    panelHeight = 28,
   } = panelOptions;
 
   const gap = Math.abs(panelGap);
+
+  const hidePanelTimeout =
+    typeof autoHidePanel === "object" && autoHidePanel.timeout
+      ? autoHidePanel.timeout
+      : 3000;
 
   const isFullScreen = () =>
     !!(
@@ -42,12 +47,12 @@ const VideoPlayer: React.FC<VideoPlayerProps> = (props) => {
       document.fullscreenElement
     );
 
+  // ========== State ========== //
+
   const videoRef = useRef();
   const videoContainerRef = useRef();
   const progressRef = useRef();
-  const progressBarRef = useRef();
   const audioProgressRef = useRef();
-  const audioProgressBarRef = useRef();
   const showProgressTimeout = useRef();
   const autoHidePanelTimeout = useRef();
 
@@ -91,11 +96,14 @@ const VideoPlayer: React.FC<VideoPlayerProps> = (props) => {
 
   const handleProgressClick = (e) => {
     const progress = progressRef.current;
-    const pos = (e.pageX - progress.offsetLeft - gap) / progress.offsetWidth;
+    const pos = (e.pageX - progress.offsetParent.offsetParent.offsetLeft - progress.offsetLeft - gap) / progress.offsetWidth;
+    // console.log('==>', {x: e.pageX, left: progress.offsetLeft, gap, ow: progress.offsetWidth});
+    // console.log('==>', {l: progress.offsetParent.offsetLeft, ll: progress.offsetParent.offsetParent.offsetLeft});
     const value =
       parseInt(
         Math.max(0, Math.min(1, pos)) * videoRef.current.duration * 100
       ) / 100;
+    console.log('==>', {value});
     videoRef.current.currentTime = value;
     progress.value = value;
   };
@@ -106,8 +114,6 @@ const VideoPlayer: React.FC<VideoPlayerProps> = (props) => {
     // For mobile browsers, ensure that the progress element's max attribute is set
     if (!progress.getAttribute("max"))
       progress.setAttribute("max", video.duration);
-    progressBarRef.current.style.width =
-      Math.floor((video.currentTime / video.duration) * 100) + "%";
     setPlayed(video.currentTime);
   };
 
@@ -125,6 +131,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = (props) => {
     const { top } = progress.getBoundingClientRect();
     const pos = (e.pageY - top) / progress.offsetWidth;
     const value = 1 - Math.max(0, Math.min(1, pos));
+    // console.log('==>', {y: e.pageY, top, w: progress.offsetWidth, value, l: 1-value});
     videoRef.current.volume = value;
     progress.value = value;
   };
@@ -224,6 +231,8 @@ const VideoPlayer: React.FC<VideoPlayerProps> = (props) => {
     );
   };
 
+  // ========== View ========== //
+
   return (
     <div
       data-testid="VideoPlayer"
@@ -239,9 +248,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = (props) => {
         if (autoHidePanel)
           autoHidePanelTimeout.current = setTimeout(
             () => setShowVideoPanel(false),
-            typeof autoHidePanel === "object" && autoHidePanel.timeout
-              ? autoHidePanel.timeout
-              : 3000
+            hidePanelTimeout
           );
       }}
     >
@@ -265,28 +272,6 @@ const VideoPlayer: React.FC<VideoPlayerProps> = (props) => {
           {/* <track label="English" kind="subtitles" srclang="en" src="subtitles/vtt/sintel-en.vtt" default>
           <track label="Deutsch" kind="subtitles" srclang="de" src="subtitles/vtt/sintel-de.vtt">
           <track label="Español" kind="subtitles" srclang="es" src="subtitles/vtt/sintel-es.vtt"> */}
-          {/* <!-- Flash fallback --> */}
-          <object
-            type="application/x-shockwave-flash"
-            data={`flash-player.swf?videoUrl=${src}`}
-            width={width}
-            height={height}
-          >
-            <param name="movie" value={`flash-player.swf?videoUrl=${src}`} />
-            <param name="allowfullscreen" value="true" />
-            <param name="wmode" value="transparent" />
-            <param
-              name="flashvars"
-              value={`controlbar=over&amp;image=img/poster.jpg&amp;file=flash-player.swf?videoUrl=${src}`}
-            />
-            <img
-              alt="Tears of Steel poster image"
-              src={poster}
-              width={width}
-              height={height}
-              title="No video playback possible, please download the video from the link below"
-            />
-          </object>
         </video>
         {supportsVideo.current && showPanel && showVideoPanel && (
           <ul
@@ -294,7 +279,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = (props) => {
             style={{
               ...panelStyle,
               width: `calc(${width} - ${gap * 2}px)`,
-              height: panelHeight || 28,
+              height: panelHeight,
             }}
           >
             {/* 快退 */}
@@ -348,7 +333,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = (props) => {
                 ref={progressRef}
                 onClick={handleProgressClick}
               >
-                <span ref={progressBarRef} />
+                {played / duration}
               </progress>
             </li>
             {/* 视频总时长 */}
@@ -384,9 +369,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = (props) => {
                       }
                       ref={audioProgressRef}
                       onClick={handleAudioProgressClick}
-                    >
-                      <span ref={audioProgressBarRef} />
-                    </progress>
+                    />
                   </div>
                 )}
               </li>

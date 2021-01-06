@@ -28,11 +28,6 @@ legacy: /example/component-name
 | Property | Description | Type | Default |
 | -------- | ----------- | ---- | ------- |
 
-### Result
-
-| Property | Description | Type |
-| -------- | ----------- | ---- |
-
 ### Types
 
 \`\`\`ts
