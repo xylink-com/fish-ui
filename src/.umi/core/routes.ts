@@ -8,13 +8,33 @@ export function getRoutes() {
   const routes = [
   {
     "path": "/_demos/basic",
-    "component": dynamic({ loader: () => import(/* webpackChunkName: 'ContainerWithBar__demo__basic' */'../../ContainerWithBar/demo/basic.tsx')}),
+    "component": dynamic({ loader: () => import(/* webpackChunkName: 'components__Button__demo__basic' */'../../components/Button/demo/basic.tsx')}),
+    "exact": true
+  },
+  {
+    "path": "/_demos/basic-1",
+    "component": dynamic({ loader: () => import(/* webpackChunkName: 'components__ContainerWithBar__demo__basic' */'../../components/ContainerWithBar/demo/basic.tsx')}),
+    "exact": true
+  },
+  {
+    "path": "/_demos/basic-2",
+    "component": dynamic({ loader: () => import(/* webpackChunkName: 'components__Icon__demo__basic' */'../../components/Icon/demo/basic.tsx')}),
+    "exact": true
+  },
+  {
+    "path": "/_demos/basic-3",
+    "component": dynamic({ loader: () => import(/* webpackChunkName: 'components__Scroller__demo__basic' */'../../components/Scroller/demo/basic.tsx')}),
+    "exact": true
+  },
+  {
+    "path": "/_demos/basic-4",
+    "component": dynamic({ loader: () => import(/* webpackChunkName: 'components__VideoPlayer__demo__basic' */'../../components/VideoPlayer/demo/basic.tsx')}),
     "exact": true
   },
   {
     "path": "/",
     "component": (props) => require('react').createElement(require('../../../node_modules/@umijs/preset-dumi/lib/themes/default/layout.js').default, {
-      ...{"menus":{"en-US":{"*":[{"path":"/","title":"xy-element","meta":{}}],"/pages":[{"path":"/pages/getting-started","title":"Getting Started","meta":{"order":1}},{"path":"/pages/api","title":"API Standards","meta":{}},{"path":"/pages/faq","title":"FAQ","meta":{}}],"/components":[{"title":"Scroll","path":"/components/scroll","meta":{},"children":[{"path":"/components/scroll/container-with-bar","title":"ContainerWithBar","meta":{}},{"path":"/components/scroll/scroller","title":"Scroller","meta":{}}]}]},"zh-CN":{"*":[{"path":"/zh-CN","title":"xy-element","meta":{}}],"/zh-CN/pages":[{"path":"/zh-CN/pages/getting-started","title":"快速上手","meta":{"order":1}},{"path":"/zh-CN/pages/api","title":"API 规范","meta":{}},{"path":"/zh-CN/pages/faq","title":"FAQ","meta":{}}],"/zh-CN/components":[{"title":"Scroll","path":"/zh-CN/components/scroll","meta":{},"children":[{"path":"/zh-CN/components/scroll/container-with-bar","title":"ContainerWithBar","meta":{}},{"path":"/zh-CN/components/scroll/scroller","title":"Scroller","meta":{}}]}]}},"locales":[{"name":"en-US","label":"English"},{"name":"zh-CN","label":"中文"}],"navs":{"en-US":[{"path":"/pages","title":"Guide","order":1},{"title":"Components","path":"/components"}],"zh-CN":[{"path":"/zh-CN/pages","title":"指南","order":1},{"title":"Components","path":"/zh-CN/components"}]},"title":"xy-element","logo":"/xy-element/logo.png","mode":"site","repoUrl":"https://github.com/xylink-com/xy-element"},
+      ...{"menus":{"en-US":{"*":[{"path":"/","title":"xy-element","meta":{}}],"/pages":[{"path":"/pages/getting-started","title":"Getting Started","meta":{"order":1}},{"path":"/pages/api","title":"API Standards","meta":{}},{"path":"/pages/faq","title":"FAQ","meta":{}}],"/components":[{"title":"Common","path":"/components/common","meta":{},"children":[{"path":"/components/common/icon","title":"Icon","meta":{}}]},{"title":"Example","path":"/components/example","meta":{},"children":[{"path":"/components/example/button","title":"Button","meta":{}},{"path":"/components/example/video-player","title":"VideoPlayer","meta":{}}]},{"title":"Other","path":"/components/other","meta":{},"children":[{"path":"/components/other/container-with-bar","title":"ContainerWithBar","meta":{}},{"path":"/components/other/scroller","title":"Scroller","meta":{}}]}]},"zh-CN":{"*":[{"path":"/zh-CN","title":"xy-element","meta":{}}],"/zh-CN/pages":[{"path":"/zh-CN/pages/getting-started","title":"快速上手","meta":{"order":1}},{"path":"/zh-CN/pages/api","title":"API 规范","meta":{}},{"path":"/zh-CN/pages/faq","title":"FAQ","meta":{}}],"/zh-CN/components":[{"title":"Common","path":"/zh-CN/components/common","meta":{},"children":[{"path":"/zh-CN/components/common/icon","title":"Icon","meta":{}}]},{"title":"DataDisplay","path":"/zh-CN/components/data-display","meta":{},"children":[{"path":"/zh-CN/components/data-display/video-player","title":"VideoPlayer","meta":{}}]},{"title":"Example","path":"/zh-CN/components/example","meta":{},"children":[{"path":"/zh-CN/components/example/button","title":"Button","meta":{}},{"path":"/zh-CN/components/example/video-player","title":"VideoPlayer","meta":{}}]},{"title":"Other","path":"/zh-CN/components/other","meta":{},"children":[{"path":"/zh-CN/components/other/container-with-bar","title":"ContainerWithBar","meta":{}},{"path":"/zh-CN/components/other/scroller","title":"Scroller","meta":{}}]}]}},"locales":[{"name":"en-US","label":"English"},{"name":"zh-CN","label":"中文"}],"navs":{"en-US":[{"path":"/pages","title":"Guide","order":1},{"title":"Components","path":"/components"}],"zh-CN":[{"path":"/zh-CN/pages","title":"指南","order":1},{"title":"Components","path":"/zh-CN/components"}]},"title":"xy-element","logo":"/xy-element/logo.png","mode":"site","repoUrl":"https://github.com/xylink-com/xy-element"},
       ...props,
     }),
     "routes": [
@@ -118,7 +138,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "guide/pages/api.en-US.md",
-          "updatedTime": 1607395275000,
+          "updatedTime": 1607668280000,
           "slugs": [
             {
               "depth": 1,
@@ -206,7 +226,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "guide/pages/api.zh-CN.md",
-          "updatedTime": 1607395275000,
+          "updatedTime": 1607668280000,
           "slugs": [
             {
               "depth": 1,
@@ -294,7 +314,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "guide/pages/faq.en-US.md",
-          "updatedTime": 1607395275000,
+          "updatedTime": 1607668280000,
           "slugs": [
             {
               "depth": 1,
@@ -327,7 +347,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "guide/pages/faq.zh-CN.md",
-          "updatedTime": 1607395275000,
+          "updatedTime": 1607668280000,
           "slugs": [
             {
               "depth": 1,
@@ -360,7 +380,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "guide/pages/getting-started.en-US.md",
-          "updatedTime": 1607395275000,
+          "updatedTime": 1607659159000,
           "order": 1,
           "nav": {
             "title": "Guide",
@@ -503,22 +523,158 @@ export function getRoutes() {
         "title": "xy-element"
       },
       {
-        "path": "/components/scroll/container-with-bar",
-        "component": dynamic({ loader: () => import(/* webpackChunkName: 'ContainerWithBar__index.en-US.md' */'../../ContainerWithBar/index.en-US.md')}),
+        "path": "/components/example/button",
+        "component": dynamic({ loader: () => import(/* webpackChunkName: 'components__Button__index.en-US.md' */'../../components/Button/index.en-US.md')}),
         "exact": true,
         "meta": {
-          "filePath": "src/ContainerWithBar/index.en-US.md",
-          "updatedTime": 1607658257000,
+          "filePath": "src/components/Button/index.en-US.md",
+          "updatedTime": 1608801726479,
+          "title": "Button",
+          "nav": {
+            "title": "Components",
+            "path": "/components"
+          },
+          "group": {
+            "title": "Example",
+            "path": "/components/example"
+          },
+          "legacy": "/example/component-name",
+          "slugs": [
+            {
+              "depth": 1,
+              "value": "Button",
+              "heading": "button"
+            },
+            {
+              "depth": 2,
+              "value": "Examples",
+              "heading": "examples"
+            },
+            {
+              "depth": 2,
+              "value": "Usage",
+              "heading": "usage"
+            },
+            {
+              "depth": 3,
+              "value": "Params",
+              "heading": "params"
+            },
+            {
+              "depth": 3,
+              "value": "Result",
+              "heading": "result"
+            },
+            {
+              "depth": 3,
+              "value": "Types",
+              "heading": "types"
+            },
+            {
+              "depth": 3,
+              "value": "WORKFLOW",
+              "heading": "workflow"
+            },
+            {
+              "depth": 4,
+              "value": "TOFIX",
+              "heading": "tofix"
+            },
+            {
+              "depth": 4,
+              "value": "TODO",
+              "heading": "todo"
+            }
+          ],
+          "locale": "en-US"
+        },
+        "title": "Button"
+      },
+      {
+        "path": "/zh-CN/components/example/button",
+        "component": dynamic({ loader: () => import(/* webpackChunkName: 'components__Button__index.zh-CN.md' */'../../components/Button/index.zh-CN.md')}),
+        "exact": true,
+        "meta": {
+          "filePath": "src/components/Button/index.zh-CN.md",
+          "updatedTime": 1608801726479,
+          "title": "Button",
+          "nav": {
+            "title": "Components",
+            "path": "/zh-CN/components"
+          },
+          "group": {
+            "title": "Example",
+            "path": "/zh-CN/components/example"
+          },
+          "legacy": "/example/component-name",
+          "slugs": [
+            {
+              "depth": 1,
+              "value": "Button",
+              "heading": "button"
+            },
+            {
+              "depth": 2,
+              "value": "示例",
+              "heading": "示例"
+            },
+            {
+              "depth": 2,
+              "value": "用法",
+              "heading": "用法"
+            },
+            {
+              "depth": 3,
+              "value": "参数",
+              "heading": "参数"
+            },
+            {
+              "depth": 3,
+              "value": "返回值",
+              "heading": "返回值"
+            },
+            {
+              "depth": 3,
+              "value": "接口与类型",
+              "heading": "接口与类型"
+            },
+            {
+              "depth": 3,
+              "value": "工作流",
+              "heading": "工作流"
+            },
+            {
+              "depth": 4,
+              "value": "TOFIX",
+              "heading": "tofix"
+            },
+            {
+              "depth": 4,
+              "value": "TODO",
+              "heading": "todo"
+            }
+          ],
+          "locale": "zh-CN"
+        },
+        "title": "Button"
+      },
+      {
+        "path": "/components/other/container-with-bar",
+        "component": dynamic({ loader: () => import(/* webpackChunkName: 'components__ContainerWithBar__index.en-US.md' */'../../components/ContainerWithBar/index.en-US.md')}),
+        "exact": true,
+        "meta": {
+          "filePath": "src/components/ContainerWithBar/index.en-US.md",
+          "updatedTime": 1609921935118,
           "title": "ContainerWithBar",
           "nav": {
             "title": "Components",
             "path": "/components"
           },
           "group": {
-            "title": "Scroll",
-            "path": "/components/scroll"
+            "title": "Other",
+            "path": "/components/other"
           },
-          "legacy": "/scroll/container-with-bar",
+          "legacy": "/other/container-with-bar",
           "slugs": [
             {
               "depth": 1,
@@ -571,22 +727,22 @@ export function getRoutes() {
         "title": "ContainerWithBar"
       },
       {
-        "path": "/zh-CN/components/scroll/container-with-bar",
-        "component": dynamic({ loader: () => import(/* webpackChunkName: 'ContainerWithBar__index.zh-CN.md' */'../../ContainerWithBar/index.zh-CN.md')}),
+        "path": "/zh-CN/components/other/container-with-bar",
+        "component": dynamic({ loader: () => import(/* webpackChunkName: 'components__ContainerWithBar__index.zh-CN.md' */'../../components/ContainerWithBar/index.zh-CN.md')}),
         "exact": true,
         "meta": {
-          "filePath": "src/ContainerWithBar/index.zh-CN.md",
-          "updatedTime": 1607658257000,
+          "filePath": "src/components/ContainerWithBar/index.zh-CN.md",
+          "updatedTime": 1609921927593,
           "title": "ContainerWithBar",
           "nav": {
             "title": "Components",
             "path": "/zh-CN/components"
           },
           "group": {
-            "title": "Scroll",
-            "path": "/zh-CN/components/scroll"
+            "title": "Other",
+            "path": "/zh-CN/components/other"
           },
-          "legacy": "/scroll/container-with-bar",
+          "legacy": "/other/container-with-bar",
           "slugs": [
             {
               "depth": 1,
@@ -639,22 +795,158 @@ export function getRoutes() {
         "title": "ContainerWithBar"
       },
       {
-        "path": "/components/scroll/scroller",
-        "component": dynamic({ loader: () => import(/* webpackChunkName: 'Scroller__index.en-US.md' */'../../Scroller/index.en-US.md')}),
+        "path": "/components/common/icon",
+        "component": dynamic({ loader: () => import(/* webpackChunkName: 'components__Icon__index.en-US.md' */'../../components/Icon/index.en-US.md')}),
         "exact": true,
         "meta": {
-          "filePath": "src/Scroller/index.en-US.md",
-          "updatedTime": 1607397942000,
+          "filePath": "src/components/Icon/index.en-US.md",
+          "updatedTime": 1608350182278,
+          "title": "Icon",
+          "nav": {
+            "title": "Components",
+            "path": "/components"
+          },
+          "group": {
+            "title": "Common",
+            "path": "/components/common"
+          },
+          "legacy": "/common/icon",
+          "slugs": [
+            {
+              "depth": 1,
+              "value": "Icon",
+              "heading": "icon"
+            },
+            {
+              "depth": 2,
+              "value": "Examples",
+              "heading": "examples"
+            },
+            {
+              "depth": 2,
+              "value": "Usage",
+              "heading": "usage"
+            },
+            {
+              "depth": 3,
+              "value": "Params",
+              "heading": "params"
+            },
+            {
+              "depth": 3,
+              "value": "Result",
+              "heading": "result"
+            },
+            {
+              "depth": 3,
+              "value": "Types",
+              "heading": "types"
+            },
+            {
+              "depth": 3,
+              "value": "WORKFLOW",
+              "heading": "workflow"
+            },
+            {
+              "depth": 4,
+              "value": "TOFIX",
+              "heading": "tofix"
+            },
+            {
+              "depth": 4,
+              "value": "TODO",
+              "heading": "todo"
+            }
+          ],
+          "locale": "en-US"
+        },
+        "title": "Icon"
+      },
+      {
+        "path": "/zh-CN/components/common/icon",
+        "component": dynamic({ loader: () => import(/* webpackChunkName: 'components__Icon__index.zh-CN.md' */'../../components/Icon/index.zh-CN.md')}),
+        "exact": true,
+        "meta": {
+          "filePath": "src/components/Icon/index.zh-CN.md",
+          "updatedTime": 1608350244490,
+          "title": "Icon",
+          "nav": {
+            "title": "Components",
+            "path": "/zh-CN/components"
+          },
+          "group": {
+            "title": "Common",
+            "path": "/zh-CN/components/common"
+          },
+          "legacy": "/common/icon",
+          "slugs": [
+            {
+              "depth": 1,
+              "value": "Icon",
+              "heading": "icon"
+            },
+            {
+              "depth": 2,
+              "value": "示例",
+              "heading": "示例"
+            },
+            {
+              "depth": 2,
+              "value": "用法",
+              "heading": "用法"
+            },
+            {
+              "depth": 3,
+              "value": "参数",
+              "heading": "参数"
+            },
+            {
+              "depth": 3,
+              "value": "返回值",
+              "heading": "返回值"
+            },
+            {
+              "depth": 3,
+              "value": "接口与类型",
+              "heading": "接口与类型"
+            },
+            {
+              "depth": 3,
+              "value": "工作流",
+              "heading": "工作流"
+            },
+            {
+              "depth": 4,
+              "value": "TOFIX",
+              "heading": "tofix"
+            },
+            {
+              "depth": 4,
+              "value": "TODO",
+              "heading": "todo"
+            }
+          ],
+          "locale": "zh-CN"
+        },
+        "title": "Icon"
+      },
+      {
+        "path": "/components/other/scroller",
+        "component": dynamic({ loader: () => import(/* webpackChunkName: 'components__Scroller__index.en-US.md' */'../../components/Scroller/index.en-US.md')}),
+        "exact": true,
+        "meta": {
+          "filePath": "src/components/Scroller/index.en-US.md",
+          "updatedTime": 1609921937955,
           "title": "Scroller",
           "nav": {
             "title": "Components",
             "path": "/components"
           },
           "group": {
-            "title": "Scroll",
-            "path": "/components/scroll"
+            "title": "Other",
+            "path": "/components/other"
           },
-          "legacy": "/scroll/scroller",
+          "legacy": "/other/scroller",
           "slugs": [
             {
               "depth": 1,
@@ -702,22 +994,158 @@ export function getRoutes() {
         "title": "Scroller"
       },
       {
-        "path": "/zh-CN/components/scroll/scroller",
-        "component": dynamic({ loader: () => import(/* webpackChunkName: 'Scroller__index.en-US.md' */'../../Scroller/index.en-US.md')}),
+        "path": "/components/example/video-player",
+        "component": dynamic({ loader: () => import(/* webpackChunkName: 'components__VideoPlayer__index.en-US.md' */'../../components/VideoPlayer/index.en-US.md')}),
         "exact": true,
         "meta": {
-          "filePath": "src/Scroller/index.en-US.md",
-          "updatedTime": 1607397942000,
+          "filePath": "src/components/VideoPlayer/index.en-US.md",
+          "updatedTime": 1609921488536,
+          "title": "VideoPlayer",
+          "nav": {
+            "title": "Components",
+            "path": "/components"
+          },
+          "group": {
+            "title": "Example",
+            "path": "/components/example"
+          },
+          "legacy": "/example/component-name",
+          "slugs": [
+            {
+              "depth": 1,
+              "value": "VideoPlayer",
+              "heading": "videoplayer"
+            },
+            {
+              "depth": 2,
+              "value": "Examples",
+              "heading": "examples"
+            },
+            {
+              "depth": 2,
+              "value": "Usage",
+              "heading": "usage"
+            },
+            {
+              "depth": 3,
+              "value": "Params",
+              "heading": "params"
+            },
+            {
+              "depth": 3,
+              "value": "Result",
+              "heading": "result"
+            },
+            {
+              "depth": 3,
+              "value": "Types",
+              "heading": "types"
+            },
+            {
+              "depth": 3,
+              "value": "WORKFLOW",
+              "heading": "workflow"
+            },
+            {
+              "depth": 4,
+              "value": "TOFIX",
+              "heading": "tofix"
+            },
+            {
+              "depth": 4,
+              "value": "TODO",
+              "heading": "todo"
+            }
+          ],
+          "locale": "en-US"
+        },
+        "title": "VideoPlayer"
+      },
+      {
+        "path": "/zh-CN/components/data-display/video-player",
+        "component": dynamic({ loader: () => import(/* webpackChunkName: 'components__VideoPlayer__index.zh-CN.md' */'../../components/VideoPlayer/index.zh-CN.md')}),
+        "exact": true,
+        "meta": {
+          "filePath": "src/components/VideoPlayer/index.zh-CN.md",
+          "updatedTime": 1609921679153,
+          "title": "VideoPlayer",
+          "nav": {
+            "title": "Components",
+            "path": "/zh-CN/components"
+          },
+          "group": {
+            "title": "DataDisplay",
+            "path": "/zh-CN/components/data-display"
+          },
+          "legacy": "/data-display/video-player",
+          "slugs": [
+            {
+              "depth": 1,
+              "value": "VideoPlayer",
+              "heading": "videoplayer"
+            },
+            {
+              "depth": 2,
+              "value": "示例",
+              "heading": "示例"
+            },
+            {
+              "depth": 2,
+              "value": "用法",
+              "heading": "用法"
+            },
+            {
+              "depth": 3,
+              "value": "参数",
+              "heading": "参数"
+            },
+            {
+              "depth": 3,
+              "value": "返回值",
+              "heading": "返回值"
+            },
+            {
+              "depth": 3,
+              "value": "接口与类型",
+              "heading": "接口与类型"
+            },
+            {
+              "depth": 3,
+              "value": "工作流",
+              "heading": "工作流"
+            },
+            {
+              "depth": 4,
+              "value": "TOFIX",
+              "heading": "tofix"
+            },
+            {
+              "depth": 4,
+              "value": "TODO",
+              "heading": "todo"
+            }
+          ],
+          "locale": "zh-CN"
+        },
+        "title": "VideoPlayer"
+      },
+      {
+        "path": "/zh-CN/components/other/scroller",
+        "component": dynamic({ loader: () => import(/* webpackChunkName: 'components__Scroller__index.en-US.md' */'../../components/Scroller/index.en-US.md')}),
+        "exact": true,
+        "meta": {
+          "filePath": "src/components/Scroller/index.en-US.md",
+          "updatedTime": 1609921937955,
           "title": "Scroller",
           "nav": {
             "title": "Components",
             "path": "/zh-CN/components"
           },
           "group": {
-            "title": "Scroll",
-            "path": "/zh-CN/components/scroll"
+            "title": "Other",
+            "path": "/zh-CN/components/other"
           },
-          "legacy": "/scroll/scroller",
+          "legacy": "/other/scroller",
           "slugs": [
             {
               "depth": 1,
@@ -763,6 +1191,74 @@ export function getRoutes() {
           "locale": "zh-CN"
         },
         "title": "Scroller"
+      },
+      {
+        "path": "/zh-CN/components/example/video-player",
+        "component": dynamic({ loader: () => import(/* webpackChunkName: 'components__VideoPlayer__index.en-US.md' */'../../components/VideoPlayer/index.en-US.md')}),
+        "exact": true,
+        "meta": {
+          "filePath": "src/components/VideoPlayer/index.en-US.md",
+          "updatedTime": 1609921488536,
+          "title": "VideoPlayer",
+          "nav": {
+            "title": "Components",
+            "path": "/zh-CN/components"
+          },
+          "group": {
+            "title": "Example",
+            "path": "/zh-CN/components/example"
+          },
+          "legacy": "/example/component-name",
+          "slugs": [
+            {
+              "depth": 1,
+              "value": "VideoPlayer",
+              "heading": "videoplayer"
+            },
+            {
+              "depth": 2,
+              "value": "Examples",
+              "heading": "examples"
+            },
+            {
+              "depth": 2,
+              "value": "Usage",
+              "heading": "usage"
+            },
+            {
+              "depth": 3,
+              "value": "Params",
+              "heading": "params"
+            },
+            {
+              "depth": 3,
+              "value": "Result",
+              "heading": "result"
+            },
+            {
+              "depth": 3,
+              "value": "Types",
+              "heading": "types"
+            },
+            {
+              "depth": 3,
+              "value": "WORKFLOW",
+              "heading": "workflow"
+            },
+            {
+              "depth": 4,
+              "value": "TOFIX",
+              "heading": "tofix"
+            },
+            {
+              "depth": 4,
+              "value": "TODO",
+              "heading": "todo"
+            }
+          ],
+          "locale": "zh-CN"
+        },
+        "title": "VideoPlayer"
       },
       {
         "path": "/pages",
@@ -777,38 +1273,83 @@ export function getRoutes() {
         "redirect": "/zh-CN/pages/getting-started"
       },
       {
-        "path": "/components/scroll",
+        "path": "/components/example",
         "meta": {},
         "exact": true,
-        "redirect": "/components/scroll/container-with-bar"
+        "redirect": "/components/example/button"
       },
       {
         "path": "/components",
         "meta": {},
         "exact": true,
-        "redirect": "/components/scroll"
+        "redirect": "/components/common"
       },
       {
-        "path": "/scroll/container-with-bar",
+        "path": "/example/component-name",
         "exact": true,
-        "redirect": "/zh-CN/components/scroll/container-with-bar"
+        "redirect": "/zh-CN/components/example/video-player"
       },
       {
-        "path": "/zh-CN/components/scroll",
+        "path": "/zh-CN/components/example",
         "meta": {},
         "exact": true,
-        "redirect": "/zh-CN/components/scroll/container-with-bar"
+        "redirect": "/zh-CN/components/example/button"
       },
       {
         "path": "/zh-CN/components",
         "meta": {},
         "exact": true,
-        "redirect": "/zh-CN/components/scroll"
+        "redirect": "/zh-CN/components/common"
       },
       {
-        "path": "/scroll/scroller",
+        "path": "/components/other",
+        "meta": {},
         "exact": true,
-        "redirect": "/zh-CN/components/scroll/scroller"
+        "redirect": "/components/other/container-with-bar"
+      },
+      {
+        "path": "/other/container-with-bar",
+        "exact": true,
+        "redirect": "/zh-CN/components/other/container-with-bar"
+      },
+      {
+        "path": "/zh-CN/components/other",
+        "meta": {},
+        "exact": true,
+        "redirect": "/zh-CN/components/other/container-with-bar"
+      },
+      {
+        "path": "/components/common",
+        "meta": {},
+        "exact": true,
+        "redirect": "/components/common/icon"
+      },
+      {
+        "path": "/common/icon",
+        "exact": true,
+        "redirect": "/zh-CN/components/common/icon"
+      },
+      {
+        "path": "/zh-CN/components/common",
+        "meta": {},
+        "exact": true,
+        "redirect": "/zh-CN/components/common/icon"
+      },
+      {
+        "path": "/other/scroller",
+        "exact": true,
+        "redirect": "/zh-CN/components/other/scroller"
+      },
+      {
+        "path": "/zh-CN/components/data-display",
+        "meta": {},
+        "exact": true,
+        "redirect": "/zh-CN/components/data-display/video-player"
+      },
+      {
+        "path": "/data-display/video-player",
+        "exact": true,
+        "redirect": "/zh-CN/components/data-display/video-player"
       }
     ],
     "title": "xy-element"

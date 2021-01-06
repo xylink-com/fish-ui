@@ -1,0 +1,212 @@
+@import "@/theme.scss";
+
+.video__player--wrapper {
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  background-color: #000000;
+
+  @mixin progress {
+    cursor: pointer;
+    display: block;
+    height: 5px;
+    border: none;
+    overflow: hidden;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    color: #878787; /* Internet Explorer uses this value as the progress bar's value colour */
+    background: #4b4b4b;
+
+    &::-webkit-progress-bar {
+      background: #4b4b4b;
+    }
+    &::-webkit-progress-value {
+      background: #878787;
+    }
+    &::-moz-progress-bar {
+      background: #878787;
+    }
+
+    &[data-state="fake"] {
+      background: #4b4b4b;
+      height: 5px;
+    }
+
+    span {
+      width: 0%;
+      height: 100%;
+      display: inline-block;
+      background-color: #878787;
+      position: relative;
+    }
+  }
+  .video__figure--container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    .controls__panel--wrapper {
+      background: rgba(36, 36, 36, 0.95);
+      position: absolute;
+      bottom: 5px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 10px;
+      padding: 0 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-width: 300px;
+
+      li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+
+        &.video-time {
+          font-size: 14px;
+          color: #878787;
+          width: 75px;
+          text-align:justify;
+          &.video-time-short{
+            width: 55px;
+          }
+        }
+
+        .audio__progress--wrapper {
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          height: 26px;
+          width: 90px;
+          background: #0095dd;
+          transform: translate(-50%, -64px) rotate(-90deg);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: rgba(36, 36, 36, 0.45);
+          border-radius: 10px;
+
+          progress {
+            width: 75.390625%;
+            @include progress;
+          }
+        }
+
+        &.progress {
+          padding: 0 10px;
+          flex: 1;
+
+          progress {
+            width: 100%;
+            @include progress;
+          }
+        }
+
+        button {
+          text-align: center;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          border: none;
+          cursor: pointer;
+          background: transparent;
+          background-size: cover;
+          background-repeat: no-repeat;
+          width: 20px;
+          height: 20px;
+
+          &[data-state="play"] {
+            background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAPFBMVEVMaXH///////////////////////////////////////////////////////////////////////////9EpFypAAAAE3RSTlMAcR4OtJhHP8fkGCvOvFt9nonvQ+ExkAAAAFxJREFUeNrd0ccRwCAMBVGySI7036t/Bcvd77wzSMj9yzDH5joKBktywECa50Bq4UDujoG8ngOpxoHkiIGkXdB2T/AMs/OQhde8+CfT4GOdfKwnwrnrSuZIMPdjHz9WDKk9AU0ZAAAAAElFTkSuQmCC");
+          }
+          &[data-state="pause"] {
+            background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAACVBMVEVMaXH////////OZTV/AAAAAnRSTlMAvy1NYyUAAAArSURBVHja7dKxDQAACAJB+f2HtrIwDmBI+IriSsorSWteADMhIOAb3NNa1blvANUDoqcWAAAAAElFTkSuQmCC");
+          }
+          &[data-state="stop"] {
+            background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAACVBMVEVMaXH////////OZTV/AAAAAnRSTlMAxOqay5EAAAAjSURBVHja7cqxDQAADMIw4P+jmaN+UOHZGnLohCw8Cg5YAwUfHAH+vpwXdAAAAABJRU5ErkJggg==");
+          }
+          &[data-state="mute"] {
+            background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAPFBMVEVMaXH///////////////////////////////////////////////////////////////////////////9EpFypAAAAE3RSTlMAFYCgMX8oTA4/6cRgBz1F25IcXMCE3QAAAHFJREFUeNrd0dsKwCAIBmA7au083/9dx1rQoE3v8yKI/6PMYMCyu5VzZpZzGQQWQQz8D2Y3ZeY3MGVdau5q1kBED0ArUtkRd8AjerMhPgelHlDCuyJ8gSY86EC9QmvyVJ+pD6oftf5ZmgBNgCzyAUPWBTiYDh5ZQm+2AAAAAElFTkSuQmCC");
+          }
+          &[data-state="unmute"] {
+            background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAYFBMVEVMaXH///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////9OaPE/AAAAH3RSTlMAqoC7L9fkQFefKgYTbyT0kX9EjDxnyqfuxczGth5RjWyC0QAAALdJREFUeNrVkukKwyAQBjeHUXMfbZOe8/5v2UjFQEH/5wNRmEF0d+WMMXkStxbKBL/cAB3n14FDsGr+w80IZEGAR0C1dimASQdhhM7zHp/KiBf21Sq2/idoz4tavLBgRQwsQdB73Pe8YGEWUbwOwe3H2eCuyKhigmyOddDGBOUEAzoiaMhEVmgij8zAiFQ8Y99UrkYfWGKFKvf1VmBSpV7BppqVw71JtXtiKNMD083xkUsmz+WE+QJyihastJApegAAAABJRU5ErkJggg==");
+          }
+          &[data-state="fullscreen"] {
+            background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAACVBMVEVMaXH////////OZTV/AAAAAnRSTlMAQABPjKgAAABBSURBVHja3dJLCgAgDENB4/0PrUih+LoQwQ90VlECSrVkIoPsVAch7xXmI1jgxo1CF9f/rS75flDxsY7/B4OcRgM1PgERvf9AXAAAAABJRU5ErkJggg==");
+          }
+          &[data-state="exit-fullscreen"] {
+            background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAJFBMVEVMaXH///////////////////////////////////////////9tKdXLAAAAC3RSTlMAv6oVJVUKsrnHzqXROxgAAABvSURBVHja3dBBDoAgEEPRzgyK0Pvf1wVEYyeycuVfkfQFDfhTxpFhtvv2BowAotIFPI5xsO4LUIxH4B2URgssQGcrWAF22RWMBNh9nOHj8sX6DeqvkUi5gLy7At2hQHcFuivIO8jrqQVsnl7E8KNOVg8Ea7m8ZRMAAAAASUVORK5CYII=");
+          }
+          &[data-state="play-back"] {
+            background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAM1BMVEVMaXH////////////////////////////////////////////////////////////////x7/yuAAAAEHRSTlMAZoa2kt5ZEszACtBKeClBOvz7oAAAAGNJREFUeNrlkksOgCAMRPFb8Dv3P61mYkJsjU1kJ2/zFgzQtA11Mg4p2zL1AE4LbdkjeLDMtGEFCe1lxRYBkvAYaHBDByTCoK6/BjqUBvhFWZH2Eb9Rfqv9Ybnj/rAwRCT7PxzLXQ//17LERwAAAABJRU5ErkJggg==");
+          }
+          &[data-state="play-front"] {
+            background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAMFBMVEVMaXH////////////////////////////////////////////////////////////6w4mEAAAAD3RSTlMA38mfYJcQqkzRiHNBXBxkHsHfAAAAWUlEQVR42uWSOQ7AMAzD6lw90pb//22GBOhSQ0PGaOHCwZC8LZVgz2D6F4BcOmNxBM6j05IjwDUYPYEwaLcjfMlKwF4hQFUC+6xQ547MqihRtRpLza0eZsk0PV8Onwz+vfEAAAAASUVORK5CYII=");
+          }
+          &[data-state="subtitles"] {
+            height: 85%;
+            text-indent: 0;
+            font-size: 16px;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #666;
+            background: #000;
+            -moz-border-radius: 2px;
+            -webkit-border-radius: 2px;
+            border-radius: 2px;
+          }
+        }
+      }
+    }
+  }
+
+  .controls__panel--wrapper button:hover,
+  .subtitles-menu li button:hover,
+  .subtitles-menu li button[data-state="active"] {
+    opacity: 0.6;
+  }
+
+  /* subtitles menu */
+  .subtitles-menu {
+    display: none;
+    position: absolute;
+    bottom: 14.8%;
+    right: 20px;
+    background: #666;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100px;
+    padding: 10px;
+
+    li {
+      padding: 0;
+      text-align: center;
+
+      button {
+        border: none;
+        background: #000;
+        color: #fff;
+        cursor: pointer;
+        width: 90%;
+        padding: 2px 5px;
+        -moz-border-radius: 2px;
+        -webkit-border-radius: 2px;
+        border-radius: 2px;
+      }
+    }
+  }
+
+  /* WebVTT cues */
+  ::cue {
+    color: #ccc;
+  }
+  ::cue(v[voice="Test"]) {
+    color: #fff;
+    background: #0095dd;
+  }
+}

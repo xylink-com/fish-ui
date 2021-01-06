@@ -18,7 +18,11 @@ module.exports = {
         presets: [["react-app", { flow: false, typescript: true }]]
       }
     });
+
     config.resolve.extensions.push(".ts", ".tsx");
+    config.resolve.alias = {
+      "@": path.resolve(__dirname, '..', `src`),
+    };
 
     return config;
   }

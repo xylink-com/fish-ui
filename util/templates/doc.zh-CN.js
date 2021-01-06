@@ -13,33 +13,33 @@ legacy: /example/component-name
 
 # ${componentName}
 
-## Examples
+## 示例
 
 <code src="./demo/basic.tsx" />
 
-## Usage
+## 用法
 
 \`\`\`ts
 
 \`\`\`
 
-### Params
+### 参数
 
 | 参数 | 描述 | 类型 | 默认值 |
 | -------- | ----------- | ---- | ------- |
 
-### Result
+### 返回值
 
 | 参数 | 描述 | 类型 |
 | -------- | ----------- | ---- |
 
-### Types
+### 接口与类型
 
 \`\`\`ts
 
 \`\`\`
 
-### WORKFLOW
+### 工作流
 
 #### TOFIX
 

@@ -1,4 +1,4 @@
 module.exports = (componentName) => ({
-  content: `@import "../theme.scss";`,
+  content: `@import "@/theme.scss";`,
   extension: `.scss`
 });

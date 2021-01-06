@@ -7,7 +7,7 @@ export interface Option {
   keepEmpty?: boolean;
 }
 
-export default function toArray(
+export function toArray(
   children: React.ReactNode,
   option: Option = {},
 ): React.ReactElement[] {

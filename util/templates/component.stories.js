@@ -6,7 +6,7 @@ export default {
     title: "${componentName}"
 };
 
-export const con = () => <${componentName} />;
+export const Basic${componentName} = () => <${componentName} />;
 `,
   extension: `.stories.tsx`
 });

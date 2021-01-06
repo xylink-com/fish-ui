@@ -1,0 +1,38 @@
+@import "@/theme.scss";
+
+$defaultPrefixCls: "xy-btn";
+
+.#{defaultPrefixCls} {
+  & {
+  }
+  &-primary {
+  }
+  &-ghost {
+  }
+  &-dashed {
+  }
+  &-link {
+  }
+  &-text {
+  }
+  &-default {
+  }
+  &-large {
+  }
+  &-small {
+  }
+  &-circle {
+  }
+  &-round {
+  }
+  &-square {
+  }
+  &-ghost {
+  }
+  &-disabled {
+  }
+  &-block {
+  }
+  &-loading {
+  }
+}

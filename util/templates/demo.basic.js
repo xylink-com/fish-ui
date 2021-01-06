@@ -8,8 +8,8 @@ module.exports = (componentName) => ({
  * desc.zh-CN: 基础用法的描述。
  */
 
-import { ${componentName} } from '../${componentName}.stories';
-export default () => <${componentName} />;`,
+import { Basic${componentName} } from '../${componentName}.stories';
+export default () => <Basic${componentName} />;`,
   extension: `.tsx`,
   fileName: `basic`,
   key: `genBasicDemo`

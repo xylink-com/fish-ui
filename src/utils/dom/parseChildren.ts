@@ -55,4 +55,4 @@ export function parseChildrenTree(children: React.ReactNode, role? = null) {
     .filter((node) => node);
 }
 
-export default { parseChildren, parseChildrenTree };
+export { parseChildren, parseChildrenTree };
