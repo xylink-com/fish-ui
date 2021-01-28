@@ -15,16 +15,19 @@ interface IPanelOptions {
   showStop?: boolean;
   showVolume?: boolean;
   showFullScreen?: boolean;
-  panelGap?: number | string;
+  panelGap?: number;
   panelHeight?: number | string;
   panelStyle?: CSSProperties;
   panelClassName?: string;
+  showPlayRate?: boolean;
+  showPlayButton?: boolean;
+  showPicInPic?: boolean;
 }
 
 export default interface VideoPlayerProps {
   className?: string;
   style?: CSSProperties;
-  src: string | ISource[]
+  src: string | ISource[];
   width?: number | string;
   height?: number | string;
   videoProps?: {} | ;
@@ -33,4 +36,6 @@ export default interface VideoPlayerProps {
   autoHidePanel?: boolean | IHidePanelOption;
   panelOptions?: IPanelOptions;
   defaultVolume?: number;
+  defaultPlayRate?: number;
+  defaultPlayRateArray?: number[];
 }

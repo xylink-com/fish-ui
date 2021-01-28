@@ -99,7 +99,7 @@ export function getRoutes() {
             "actions": [
               {
                 "text": "快速上手",
-                "link": "/zh-CN/docs/getting-started"
+                "link": "/zh-CN/pages/getting-started"
               }
             ]
           },
@@ -999,7 +999,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "src/components/VideoPlayer/index.en-US.md",
-          "updatedTime": 1609921953000,
+          "updatedTime": 1609926525000,
           "title": "VideoPlayer",
           "nav": {
             "title": "Components",
@@ -1077,7 +1077,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "src/components/VideoPlayer/index.zh-CN.md",
-          "updatedTime": 1609921953000,
+          "updatedTime": 1609926525000,
           "title": "VideoPlayer",
           "nav": {
             "title": "Components",

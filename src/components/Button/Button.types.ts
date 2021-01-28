@@ -12,7 +12,7 @@ export default interface ButtonProps {
   onClick?: () => void;
   tag?: TRenderTag;
   href?: string;
-  htmlType?: string;
+  htmlType?: "button" | "submit" | "reset";
   loading?: boolean;
   target?: string;
 }

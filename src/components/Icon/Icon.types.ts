@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export interface CustomIconComponentProps {
   width: string | number;
   height: string | number;
@@ -14,4 +16,10 @@ export default interface IconProps extends IconBaseProps {
   color?: string;
   size?: string | number;
   style?: React.CSSProperties;
+  className?: string;
+  spin?: boolean;
+  rotate?: boolean;
+  tabIndex?: number;
+  onClick?: () => void;
+  children?: ReactNode;
 }

@@ -5,7 +5,7 @@ hero:
   desc: 为 React Hooks 而生
   actions:
     - text: 快速上手
-      link: /zh-CN/docs/getting-started
+      link: /zh-CN/pages/getting-started
 features:
   - icon: https://gw.alipayobjects.com/zos/bmw-prod/813f5ed9-6bc4-43d4-9f74-ec81ecf35733/k7htg6n4_w144_h144.png
     title: 内容丰富

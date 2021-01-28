@@ -5,15 +5,15 @@ export default {
   title: "VideoPlayer",
 };
 
-const src =
-  "https://edutxdevcdn.xylink.com//edu/video/20200206/410082962739036160.mp4";
-// const src = "http://jonsam.site/wp-content/uploads/2019/06/timervideo_2.mp4";
+// const src =
+  // "https://edutxdevcdn.xylink.com//edu/video/20200206/410082962739036160.mp4";
+const src = "http://jonsam.site/wp-content/uploads/2019/06/timervideo_2.mp4";
 
 export const BasicVideoPlayer = () => (
   <div style={{ width: 600, height: 400 }}>
     <VideoPlayer
-      autoHidePanel={{timeout: 1000}}
-      // autoHidePanel={false}
+      // autoHidePanel={{timeout: 1000}}
+      autoHidePanel={false}
       src={src}
       poster="https://img.alicdn.com/tfscom/TB19dgvGFXXXXXPXpXXSutbFXXX.jpg_200x200.jpg"
       panelOptions={{
@@ -29,7 +29,9 @@ export const BasicVideoPlayer = () => (
           bottom: 8
         },
       }}
-      defaultVolume={0.5}
+      defaultVolume={0.1}
+      defaultPlayRate={2.00}
+      defaultPlayRateArray = {[0.5, 0.75, 1, 1.5, 2, 3, 5]}
     />
   </div>
 );

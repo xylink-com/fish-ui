@@ -5,7 +5,7 @@ import { warning } from "../../utils";
 import useInsertStyles from "../../hooks/useInsertStyles";
 import { iconStyles, svgBaseProps } from "./Icon.config";
 
-const Icon: React.FC<IconProps> = (props, ref) => {
+const Icon = (props: IconProps, ref) => {
   const {
     className,
     component: Component, // 以组件引用

@@ -27,10 +27,10 @@ export default {
     },
   ],
   plugins: [
-    // alias({
-    //   entries: [{ find: "@", replacement: path.resolve(__dirname, "./src") }],
-    //   customResolver,
-    // }),
+    alias({
+      entries: [{ find: "src/", replacement: path.resolve("src/") }],
+      customResolver
+    }),
     postcss({
       plugins: [],
     }),

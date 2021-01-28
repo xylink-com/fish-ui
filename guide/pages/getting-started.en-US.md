@@ -9,19 +9,19 @@ nav:
 
 ## Development Guide
 
-- 从 github 拉取 xy-element 项目：[xy-element](https://github.com/xylink-com/xy-element)
+1. 从 github 拉取 xy-element 项目：[xy-element](https://github.com/xylink-com/xy-element)
 
 ```bash
 git clone git@github.com:xylink-com/xy-element.git
 ```
 
-- 初始化项目：安装依赖
+2. 初始化项目：安装依赖
 
 ```bash
 yarn init
 ```
 
-- 生成目标组件
+3. 生成目标组件
 
 ```bash
 yarn generate ComponentNameWithCamelCase
@@ -38,6 +38,7 @@ yarn gen ComponentNameWithCamelCase
 ```txt
 Scroller
 ├── demo 引入文档的 demo 目录
+├────── basic.tsx 默认的文档 demo 示例
 ├── Scroller.scss 组件样式文件
 ├── Scroller.stories.tsx 组件 demo 或者案例文件
 ├── Scroller.test.tsx 组件测试文件
@@ -45,10 +46,12 @@ Scroller
 ├── Scroller.types.ts 组件类型文件
 ├── index.en-US.md 组件英文文档
 ├── index.zh-CN.md 组件中文文档
-└── index.tsx 组件入口，导出相关组件和类型
+└── index.tsx 组件入口，导出相关组件和接口
 ```
 
-- 启动story book开发组件
+![[生成组件目录结构.png]]
+
+4. 启动story book开发组件
 
 ```bash
 yarn storybook
@@ -62,7 +65,7 @@ yarn story
 
 打开浏览器: http://localhost:6006
 
-- 编写组件 demo
+5. 编写组件 demo
 
 在 ***.stories.tsx** 中编写 demo，并且在 demo 目录中以默认导出的方式导出。
 如在 demo 目录中 basic.tsx:
@@ -91,9 +94,9 @@ demo 案例可以在文档中引入，如：
 
 更多文档的配置项参见：[TSX/JSX 支持的 FrontMatter 配置项](https://d.umijs.org/zh-CN/config/frontmatter#tsxjsx-%E6%94%AF%E6%8C%81%E7%9A%84-frontmatter-%E9%85%8D%E7%BD%AE%E9%A1%B9)
 
-- 编写文档
+6. 编写文档
 
-在 index.en-US.md 中编写中文文档，在 index.zh-CN.md 中编写英文文档。
+在 index.en-US.md 中编写英文文档，在 index.zh-CN.md 中编写中文文档。
 文档头部的配置如下：
 
 ```txt
@@ -111,7 +114,7 @@ legacy: /scroll/container-with-bar // 组件的路由
 
 更多文档参考项请参考：[Markdown 支持的 FrontMatter 配置项](https://d.umijs.org/zh-CN/config/frontmatter#markdown-%E6%94%AF%E6%8C%81%E7%9A%84-frontmatter-%E9%85%8D%E7%BD%AE%E9%A1%B9)
 
-- 预览开发文档
+7. 预览开发文档
 
 ```bash
 yarn start
@@ -119,7 +122,7 @@ yarn start
 
  打开浏览器： http://localhost:8000
 
-- 测试组件库
+8. 测试组件库
 
 ```bash
 yarn test
@@ -131,7 +134,7 @@ yarn test
 yarn test:watch
 ```
 
-- 打包组件库
+9. 打包组件库
 
 ```bash
 yarn build
@@ -161,7 +164,7 @@ yarn bd
 yarn go
 ```
 
-- 发布组件库
+10. 发布组件库
 
 ```bash
 yarn pub
@@ -173,7 +176,7 @@ yarn pub
 yarn p
 ```
 
-- 发布静态文档
+11. 发布静态文档
 
 ```bash
 yarn pub:doc

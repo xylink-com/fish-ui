@@ -16,6 +16,8 @@ const VideoPlayer: React.FC<VideoPlayerProps> = (props) => {
     autoHidePanel = true,
     panelOptions = {},
     defaultVolume = 1,
+    defaultPlayRate = 1.0,
+    defaultPlayRateArray = [0.5, 0.75, 1, 1.5, 2],
     ...restProps
   } = props;
 
@@ -29,6 +31,9 @@ const VideoPlayer: React.FC<VideoPlayerProps> = (props) => {
     panelStyle = {},
     panelGap = 20,
     panelHeight = 28,
+    showPlayRate = true,
+    showPlayButton = true,
+    showPicInPic = true,
   } = panelOptions;
 
   const gap = Math.abs(panelGap);
@@ -37,7 +42,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = (props) => {
     typeof autoHidePanel === "object" && autoHidePanel.timeout
       ? autoHidePanel.timeout
       : 3000;
-
+  const document: any = window.document;
   const isFullScreen = () =>
     !!(
       document.fullScreen ||
@@ -49,19 +54,27 @@ const VideoPlayer: React.FC<VideoPlayerProps> = (props) => {
 
   // ========== State ========== //
 
-  const videoRef = useRef();
-  const videoContainerRef = useRef();
-  const progressRef = useRef();
-  const audioProgressRef = useRef();
-  const showProgressTimeout = useRef();
-  const autoHidePanelTimeout = useRef();
+  const videoRef: any = useRef();
+  const videoContainerRef: any = useRef();
+  const progressRef: any = useRef();
+  const audioProgressRef: any = useRef();
+  const showProgressTimeout: any = useRef();
+  const showPlayRateSelectorTimeout: any = useRef();
+  const autoHidePanelTimeout: any = useRef();
 
   const [play, setPlay] = useState<boolean>(false);
   const [mute, setMute] = useState<boolean>(defaultVolume === 0);
   const [duration, setDuration] = useState<number>(0);
   const [played, setPlayed] = useState<number>(0);
+  const [playRate, setPlayRate] = useState<number>(defaultPlayRate);
   const [fullScreen, setFullScreen] = useState<boolean>(isFullScreen());
+  const [picInPic, setPicInPic] = useState<boolean>(
+    document.pictureInPictureElement
+  );
   const [showAudioProgress, setShowAudioProgress] = useState<boolean>(false);
+  const [showPlayRateSelector, setShowPlayRateSelector] = useState<boolean>(
+    false
+  );
   const [showVideoPanel, setShowVideoPanel] = useState<boolean>(!autoHidePanel);
 
   const supportsVideo = useRef<boolean>(
@@ -78,39 +91,68 @@ const VideoPlayer: React.FC<VideoPlayerProps> = (props) => {
   const supportsProgress = useRef<boolean>(
     document.createElement("progress").max !== undefined
   );
+  const supportPicInPic = 'pictureInPictureEnabled' in document;
+
+  // ========== Effect ========== //
+
+  const handleLeavePicInPic = (event) => {
+    if(picInPic) setPicInPic(false);
+    const video: any = videoRef.current;
+    video?.pause?.();
+    setPlay(false);
+  };
+
+  useEffect(() => {
+    const video: any = videoRef.current;
+    video.addEventListener("leavepictureinpicture", handleLeavePicInPic);
+    return () => {
+      video.removeEventListener("leavepictureinpicture", handleLeavePicInPic);
+    };
+  }, []);
 
   // ========== Event ========== //
 
   const handlePlayClick = () => {
-    if (videoRef.current.paused || videoRef.current.ended) video.play();
-    else video.pause();
+    const video: any = videoRef.current;
+    if (video.paused || video.ended) {
+      video.playbackRate = playRate;
+      video.play();
+    } else video.pause();
     setPlay(!play);
   };
 
   const handleStopClick = () => {
-    videoRef.current.pause();
-    videoRef.current.currentTime = 0;
-    progressRef.current.value = 0;
+    const video: any = videoRef.current;
+    const progress: any = progressRef.current;
+    video?.pause();
+    video.currentTime = 0;
+    progress.value = 0;
     setPlay(false);
   };
 
   const handleProgressClick = (e) => {
-    const progress = progressRef.current;
-    const pos = (e.pageX - progress.offsetParent.offsetParent.offsetLeft - progress.offsetLeft - gap) / progress.offsetWidth;
+    const progress: any = progressRef.current;
+    const video: any = videoRef.current;
+    const pos =
+      (e.pageX -
+        progress.offsetParent.offsetParent.offsetLeft -
+        progress.offsetLeft -
+        gap) /
+      progress.offsetWidth;
     // console.log('==>', {x: e.pageX, left: progress.offsetLeft, gap, ow: progress.offsetWidth});
     // console.log('==>', {l: progress.offsetParent.offsetLeft, ll: progress.offsetParent.offsetParent.offsetLeft});
     const value =
-      parseInt(
-        Math.max(0, Math.min(1, pos)) * videoRef.current.duration * 100
+      Math.floor(
+        Math.max(0, Math.min(1, pos)) * video.duration * 100
       ) / 100;
-    console.log('==>', {value});
-    videoRef.current.currentTime = value;
+    console.log("==>", { value });
+    video.currentTime = value;
     progress.value = value;
   };
 
   const handleVideoTimeUpdate = () => {
-    const progress = progressRef.current;
-    const video = videoRef.current;
+    const progress: any = progressRef.current;
+    const video: any = videoRef.current;
     // For mobile browsers, ensure that the progress element's max attribute is set
     if (!progress.getAttribute("max"))
       progress.setAttribute("max", video.duration);
@@ -122,17 +164,19 @@ const VideoPlayer: React.FC<VideoPlayerProps> = (props) => {
   };
 
   const handleMuteClick = () => {
-    videoRef.current.muted = !video.muted;
+    const video: any = videoRef.current;
+    video.muted = !video.muted;
     setMute(!mute);
   };
 
   const handleAudioProgressClick = (e) => {
-    const progress = audioProgressRef.current;
+    const progress: any = audioProgressRef.current;
+    const video: any = videoRef.current;
     const { top } = progress.getBoundingClientRect();
     const pos = (e.pageY - top) / progress.offsetWidth;
     const value = 1 - Math.max(0, Math.min(1, pos));
     // console.log('==>', {y: e.pageY, top, w: progress.offsetWidth, value, l: 1-value});
-    videoRef.current.volume = value;
+    video.volume = value;
     progress.value = value;
   };
 
@@ -150,18 +194,32 @@ const VideoPlayer: React.FC<VideoPlayerProps> = (props) => {
       );
   };
 
+  const handlePlayRateMouseEnter = () => {
+    if (!showPlayRateSelector) setShowPlayRateSelector(true);
+  };
+
+  const handlePlayRateMouseLeave = () => {
+    clearTimeout(showPlayRateSelectorTimeout.current);
+    if (showPlayRateSelector)
+      showPlayRateSelectorTimeout.current = setTimeout(
+        () => setShowPlayRateSelector(false),
+        200
+      );
+  };
+
   const handleVideoVolumeChange = (dir) => {
+    const video: any = videoRef.current;
     if (dir) {
-      const currentVolume = Math.floor(videoRef.current.volume * 10) / 10;
+      const currentVolume = Math.floor(video.volume * 10) / 10;
       if (dir === "+") {
-        if (currentVolume < 1) videoRef.current.volume += 0.1;
+        if (currentVolume < 1) video.volume += 0.1;
       } else if (dir === "-") {
-        if (currentVolume > 0) videoRef.current.volume -= 0.1;
+        if (currentVolume > 0) video.volume -= 0.1;
       }
       // If the volume has been turned off, also set it as muted
       // Note: can only do this with the custom control set as when the 'volumechange' event is raised, there is no way to know if it was via a volume or a mute change
-      if (currentVolume <= 0) videoRef.current.muted = true;
-      else videoRef.current.muted = false;
+      if (currentVolume <= 0) video.muted = true;
+      else video.muted = false;
     }
   };
 
@@ -174,12 +232,13 @@ const VideoPlayer: React.FC<VideoPlayerProps> = (props) => {
       else if (document.msExitFullscreen) document.msExitFullscreen();
       setFullScreen(false);
     } else {
-      const videoContainer = videoContainerRef.current;
+      const videoContainer: any = videoContainerRef.current;
+      const video: any = videoRef.current;
       if (videoContainer.requestFullscreen) videoContainer.requestFullscreen();
       else if (videoContainer.mozRequestFullScreen)
         videoContainer.mozRequestFullScreen();
       else if (videoContainer.webkitRequestFullScreen) {
-        videoRef.current.webkitRequestFullScreen();
+        video.webkitRequestFullScreen();
       } else if (videoContainer.msRequestFullscreen)
         videoContainer.msRequestFullscreen();
       setFullScreen(true);
@@ -187,11 +246,12 @@ const VideoPlayer: React.FC<VideoPlayerProps> = (props) => {
   };
 
   const handleVideoLoaded = () => {
-    const container = videoContainerRef.current;
-    const video = videoRef.current;
+    const container: any = videoContainerRef.current;
+    const video: any = videoRef.current;
 
     setDuration(video?.duration || 0);
     video.volume = defaultVolume;
+    video.defaultPlaybackRate = defaultPlayRate;
 
     if (
       container.clientWidth * video.videoHeight >=
@@ -226,10 +286,41 @@ const VideoPlayer: React.FC<VideoPlayerProps> = (props) => {
       <li
         className={`video-time ${time.length <= 5 ? "video-time-short" : ""}`}
       >
-        <span>{time}</span>
+        <button>{time}</button>
       </li>
     );
   };
+
+  const handlePlayRateClick = () => {
+    const video = videoRef.current;
+    // Works on Chrome 43+, Firefox 20+, IE 9+, Edge 12+.
+    video.playbackRate = 5.0;
+  };
+
+  const handleRateChange = (rate: number) => {
+    if (!rate) return;
+    setPlayRate(rate);
+    videoRef.current.playbackRate = rate;
+    setShowPlayRateSelector(false);
+  };
+
+  const handlePicInPic = async () => {
+    const video = videoRef.current;
+    try {
+      if (video !== document.pictureInPictureElement) {
+        await video.requestPictureInPicture();
+        setPicInPic(true);
+      } else {
+        await document.exitPictureInPicture();
+        setPlay(!(video.paused || video.ended));
+        setPicInPic(false);
+      }
+    } catch (err) {
+      console.log("==>", "Enter pic-in-pic mode failed!");
+    }
+  };
+
+  const isPlayRateActive = (rate: number) => rate === playRate;
 
   // ========== View ========== //
 
@@ -327,14 +418,13 @@ const VideoPlayer: React.FC<VideoPlayerProps> = (props) => {
               <progress
                 id="progress"
                 value={played}
-                min={0}
+                // min={0}
                 max={duration}
                 data-state={supportsProgress.current ? "progress" : "fake"}
                 ref={progressRef}
                 onClick={handleProgressClick}
-              >
-                {played / duration}
-              </progress>
+              />
+              {/* <div className="progress-indicator" style={{width: `${(played / duration)*100}%`}}/>  */}
             </li>
             {/* 视频总时长 */}
             {showPlayDuration && renderTimeDuration(duration)}
@@ -362,7 +452,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = (props) => {
                     <progress
                       className="audio__progress--block"
                       value={mute ? 0 : videoRef.current.volume}
-                      min={0}
+                      // min={0}
                       max={1}
                       data-state={
                         supportsProgress.current ? "audio-progress" : "fake"
@@ -370,6 +460,38 @@ const VideoPlayer: React.FC<VideoPlayerProps> = (props) => {
                       ref={audioProgressRef}
                       onClick={handleAudioProgressClick}
                     />
+                  </div>
+                )}
+              </li>
+            )}
+            {/* 播放速度调节 */}
+            {showPlayRate && (
+              <li className="video-rate">
+                <button
+                  onClick={handlePlayRateClick}
+                  onMouseEnter={handlePlayRateMouseEnter}
+                  onMouseLeave={handlePlayRateMouseLeave}
+                >{`x${playRate}`}</button>
+                {showPlayRateSelector && (
+                  <div
+                    className="player__rate--wrapper"
+                    onMouseEnter={() => {
+                      if (showPlayRateSelector)
+                        clearTimeout(showPlayRateSelectorTimeout.current);
+                    }}
+                    onMouseLeave={handlePlayRateMouseLeave}
+                  >
+                    <ul>
+                      {defaultPlayRateArray.map((rate: number) => (
+                        <li
+                          key={`${rate}-${Math.random() * 100}`}
+                          onClick={() => handleRateChange(rate)}
+                          className={isPlayRateActive(rate) ? "active" : ""}
+                        >
+                          {rate}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 )}
               </li>
@@ -384,8 +506,25 @@ const VideoPlayer: React.FC<VideoPlayerProps> = (props) => {
                 />
               </li>
             )}
+            {/* 画中画 */}
+            {supportPicInPic && showPicInPic && (
+              <li>
+                <button
+                  type="button"
+                  data-state={picInPic ? "exit-pic-in-pic" : "pic-in-pic"}
+                  onClick={handlePicInPic}
+                />
+              </li>
+            )}
             {/* <button id="subtitles" type="button" data-state="subtitles" /> */}
           </ul>
+        )}
+        {showPlayButton && (
+          <div
+            className={`fast__play--btn ${play ? "" : "not-play"}`}
+            data-state={play ? "pause" : "play"}
+            onClick={handlePlayClick}
+          />
         )}
       </figure>
     </div>
