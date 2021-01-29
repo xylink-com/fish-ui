@@ -10,7 +10,7 @@ legacy: /example/example-component
 ---
 
 # ExampleComponent
-描述信息
+测试自动部署文档
 
 ## 示例
 
