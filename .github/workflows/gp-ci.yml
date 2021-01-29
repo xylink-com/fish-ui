@@ -44,16 +44,16 @@ jobs:
       - name: Install Packages
         run: npm install
       
-      - name: Build page
+      - name: Build
         run: npm run build
 
-      - name: Build page
+      - name: Build docs
         run: npm run build:doc
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          deploy_key: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
           publish_dir: ./docs
           allow_empty_commit: true
