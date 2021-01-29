@@ -10,7 +10,7 @@ legacy: /example/example-component
 ---
 
 # ExampleComponent
-测试自动部署文档
+测试缓存依赖项
 
 ## 示例
 
