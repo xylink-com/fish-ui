@@ -81,7 +81,6 @@
     "xy-hooks": "0.0.1-beta.1"
   },
   "dependencies": {
-    "ali-oss": "^6.12.0",
     "insert-css": "^2.0.0"
   }
 }
