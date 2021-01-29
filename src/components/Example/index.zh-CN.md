@@ -1,16 +1,15 @@
 ---
-title: ExampleComponent
+title: Example
 nav:
   title: Components
   path: /components
 group:
   title: Example
   path: /example
-legacy: /example/example-component
+legacy: /example/component-name
 ---
 
-# ExampleComponent
-测试缓存依赖项
+# Example
 
 ## 示例
 
@@ -35,7 +34,7 @@ legacy: /example/example-component
 ```
 
 ### 工作流
-工作流
+
 #### TOFIX
 
 #### TODO

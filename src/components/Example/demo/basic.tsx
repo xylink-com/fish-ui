@@ -6,5 +6,5 @@
  * desc.zh-CN: 基础用法的描述。
  */
 
-import { BasicExampleComponent } from '../ExampleComponent.stories';
-export default () => <BasicExampleComponent />;
+import { BasicExample } from '../Example.stories';
+export default () => <BasicExample />;

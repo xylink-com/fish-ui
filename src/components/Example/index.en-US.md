@@ -1,5 +1,5 @@
 ---
-title: ExampleComponent
+title: Example
 nav:
   title: Components
   path: /components
@@ -9,7 +9,7 @@ group:
 legacy: /example/component-name
 ---
 
-# ExampleComponent
+# Example
 
 ## Examples
 
