@@ -22,6 +22,11 @@ export function getRoutes() {
     "exact": true
   },
   {
+    "path": "/_demos/second",
+    "component": dynamic({ loader: () => import(/* webpackChunkName: 'components__ExampleComponent__demo__second' */'../../components/ExampleComponent/demo/second.tsx')}),
+    "exact": true
+  },
+  {
     "path": "/_demos/basic-3",
     "component": dynamic({ loader: () => import(/* webpackChunkName: 'components__Icon__demo__basic' */'../../components/Icon/demo/basic.tsx')}),
     "exact": true
@@ -37,11 +42,6 @@ export function getRoutes() {
     "exact": true
   },
   {
-    "path": "/_demos/second",
-    "component": dynamic({ loader: () => import(/* webpackChunkName: 'components__ExampleComponent__demo__second' */'../../components/ExampleComponent/demo/second.tsx')}),
-    "exact": true
-  },
-  {
     "path": "/",
     "component": (props) => require('react').createElement(require('../../../node_modules/@umijs/preset-dumi/lib/themes/default/layout.js').default, {
       ...{"menus":{"en-US":{"*":[{"path":"/","title":"xy-element","meta":{}}],"/pages":[{"path":"/pages/getting-started","title":"Getting Started","meta":{"order":1}},{"path":"/pages/api","title":"API Standards","meta":{}},{"path":"/pages/faq","title":"FAQ","meta":{}}],"/components":[{"title":"Common","path":"/components/common","meta":{},"children":[{"path":"/components/common/icon","title":"Icon","meta":{}}]},{"title":"DataDisplay","path":"/components/data-display","meta":{},"children":[{"path":"/components/data-display/video-player","title":"VideoPlayer","meta":{}}]},{"title":"Example","path":"/components/example","meta":{},"children":[{"path":"/components/example/button","title":"Button","meta":{}},{"path":"/components/example/example-component","title":"ExampleComponent","meta":{}}]},{"title":"Other","path":"/components/other","meta":{},"children":[{"path":"/components/other/container-with-bar","title":"ContainerWithBar","meta":{}},{"path":"/components/other/scroller","title":"Scroller","meta":{}}]}]},"zh-CN":{"*":[{"path":"/zh-CN","title":"xy-element","meta":{}}],"/zh-CN/pages":[{"path":"/zh-CN/pages/getting-started","title":"快速上手","meta":{"order":1}},{"path":"/zh-CN/pages/api","title":"API 规范","meta":{}},{"path":"/zh-CN/pages/faq","title":"FAQ","meta":{}}],"/zh-CN/components":[{"title":"Common","path":"/zh-CN/components/common","meta":{},"children":[{"path":"/zh-CN/components/common/icon","title":"Icon","meta":{}}]},{"title":"DataDisplay","path":"/zh-CN/components/data-display","meta":{},"children":[{"path":"/zh-CN/components/data-display/video-player","title":"VideoPlayer","meta":{}}]},{"title":"Example","path":"/zh-CN/components/example","meta":{},"children":[{"path":"/zh-CN/components/example/button","title":"Button","meta":{}},{"path":"/zh-CN/components/example/example-component","title":"ExampleComponent","meta":{}}]},{"title":"Other","path":"/zh-CN/components/other","meta":{},"children":[{"path":"/zh-CN/components/other/container-with-bar","title":"ContainerWithBar","meta":{}},{"path":"/zh-CN/components/other/scroller","title":"Scroller","meta":{}}]}]}},"locales":[{"name":"en-US","label":"English"},{"name":"zh-CN","label":"中文"}],"navs":{"en-US":[{"path":"/pages","title":"Guide","order":1},{"title":"Components","path":"/components"}],"zh-CN":[{"path":"/zh-CN/pages","title":"指南","order":1},{"title":"Components","path":"/zh-CN/components"}]},"title":"xy-element","logo":"/xy-element/logo.png","mode":"site","repoUrl":"https://github.com/xylink-com/xy-element"},
@@ -54,7 +54,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "guide/index.en-US.md",
-          "updatedTime": 1607395275000,
+          "updatedTime": 1611892242000,
           "title": "xy-hooks - React Hooks Library",
           "hero": {
             "title": "a hooks library",
@@ -810,7 +810,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "src/components/ExampleComponent/index.en-US.md",
-          "updatedTime": 1611828660189,
+          "updatedTime": 1611892242000,
           "title": "ExampleComponent",
           "nav": {
             "title": "Components",
@@ -873,7 +873,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "src/components/ExampleComponent/index.zh-CN.md",
-          "updatedTime": 1611892147208,
+          "updatedTime": 1611892242000,
           "title": "ExampleComponent",
           "nav": {
             "title": "Components",
