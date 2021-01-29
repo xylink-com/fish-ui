@@ -10,7 +10,7 @@ legacy: /example/example-component
 ---
 
 # ExampleComponent
-描述
+描述信息
 
 ## 示例
 
