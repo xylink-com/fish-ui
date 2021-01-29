@@ -2,8 +2,8 @@
  * title: Basic Usage
  * desc: Some desc for basic usage.
  *
- * title.zh-CN: 基础用法SecondExample
- * desc.zh-CN: 基础用法的描述SecondExample。
+ * title.zh-CN: 基础用法
+ * desc.zh-CN: 基础用法的描述。
  */
 
 import { SecondExample } from '../Example.stories';

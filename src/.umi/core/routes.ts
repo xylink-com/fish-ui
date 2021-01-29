@@ -810,7 +810,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "src/components/Example/index.en-US.md",
-          "updatedTime": 1611904088765,
+          "updatedTime": 1611905123000,
           "title": "Example",
           "nav": {
             "title": "Components",
@@ -873,7 +873,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "src/components/Example/index.zh-CN.md",
-          "updatedTime": 1611904504276,
+          "updatedTime": 1611905123000,
           "title": "Example",
           "nav": {
             "title": "Components",
