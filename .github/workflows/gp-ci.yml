@@ -53,7 +53,7 @@ jobs:
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          deploy_key: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: master
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          # publish_branch: master
           publish_dir: ./docs
           allow_empty_commit: true
