@@ -1,6 +1,6 @@
 {
   "name": "xy-element",
-  "version": "1.0.0",
+  "version": "1.0.1-beta.0",
   "main": "build/index.js",
   "module": "build/index.esm.js",
   "files": [
@@ -21,6 +21,7 @@
     "gen": "node ./util/create-component",
     "pub": "yarn publish",
     "p": "yarn publish",
+    "pub:beta": "yarn publish --tag beta",
     "start": "yarn run dev",
     "dev": "dumi dev",
     "build:doc": "dumi build",
@@ -43,7 +44,6 @@
   "bugs": {
     "url": "https://github.com/xylink-com/xy-element/issues"
   },
-  "homepage": "https://xylink-com.github.io/xy-element/",
   "peerDependencies": {
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0"
