@@ -41,6 +41,17 @@ generatedTemplates.forEach((template) => {
   }
 });
 
+// register global component
+const appendToIndex = `\nexport { default as ${componentName} } from "./${componentName}";`;
+fs.appendFileSync(`./src/components/index.tsx`, appendToIndex, (err) => {
+  if(err) {
+    console.error(`Register to global component failed.`.red);
+    process.exit(1);
+  } else {
+    console.info(`Register to global component successfully!`.yellow);
+  }
+} )
+
 console.log(
   "Successfully created component under: " + componentDirectory.green
 );
