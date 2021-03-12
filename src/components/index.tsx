@@ -9,3 +9,5 @@ export { default as ContainerWithBar } from "./ContainerWithBar";
 export { default as SimpleTabs } from "./SimpleTabs";
 
 export { default as VideoPlayer } from "./VideoPlayer";
+
+export { default as Example } from "./Example";
