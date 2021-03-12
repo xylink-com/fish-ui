@@ -23,28 +23,18 @@ export function getRoutes() {
   },
   {
     "path": "/_demos/basic-3",
-    "component": dynamic({ loader: () => import(/* webpackChunkName: 'components__MyExample__demo__basic' */'../../components/MyExample/demo/basic.tsx')}),
-    "exact": true
-  },
-  {
-    "path": "/_demos/sec",
-    "component": dynamic({ loader: () => import(/* webpackChunkName: 'components__MyExample__demo__sec' */'../../components/MyExample/demo/sec.tsx')}),
-    "exact": true
-  },
-  {
-    "path": "/_demos/basic-4",
     "component": dynamic({ loader: () => import(/* webpackChunkName: 'components__Scroller__demo__basic' */'../../components/Scroller/demo/basic.tsx')}),
     "exact": true
   },
   {
-    "path": "/_demos/basic-5",
+    "path": "/_demos/basic-4",
     "component": dynamic({ loader: () => import(/* webpackChunkName: 'components__VideoPlayer__demo__basic' */'../../components/VideoPlayer/demo/basic.tsx')}),
     "exact": true
   },
   {
     "path": "/",
     "component": (props) => require('react').createElement(require('../../../node_modules/@umijs/preset-dumi/lib/themes/default/layout.js').default, {
-      ...{"menus":{"en-US":{"*":[{"path":"/","title":"xy-element","meta":{}}],"/pages":[{"path":"/pages/getting-started","title":"Getting Started","meta":{"order":1}},{"path":"/pages/api","title":"API Standards","meta":{}},{"path":"/pages/faq","title":"FAQ","meta":{}}],"/components":[{"title":"Common","path":"/components/common","meta":{},"children":[{"path":"/components/common/icon","title":"Icon","meta":{}}]},{"title":"DataDisplay","path":"/components/data-display","meta":{},"children":[{"path":"/components/data-display/video-player","title":"VideoPlayer","meta":{}}]},{"title":"Example","path":"/components/example","meta":{},"children":[{"path":"/components/example/button","title":"Button","meta":{}},{"path":"/components/example/my-example","title":"MyExample","meta":{}}]},{"title":"Other","path":"/components/other","meta":{},"children":[{"path":"/components/other/container-with-bar","title":"ContainerWithBar","meta":{}},{"path":"/components/other/scroller","title":"Scroller","meta":{}}]}]},"zh-CN":{"*":[{"path":"/zh-CN","title":"xy-element","meta":{}}],"/zh-CN/pages":[{"path":"/zh-CN/pages/getting-started","title":"快速上手","meta":{"order":1}},{"path":"/zh-CN/pages/api","title":"API 规范","meta":{}},{"path":"/zh-CN/pages/faq","title":"FAQ","meta":{}}],"/zh-CN/components":[{"title":"Common","path":"/zh-CN/components/common","meta":{},"children":[{"path":"/zh-CN/components/common/icon","title":"Icon","meta":{}}]},{"title":"DataDisplay","path":"/zh-CN/components/data-display","meta":{},"children":[{"path":"/zh-CN/components/data-display/video-player","title":"VideoPlayer","meta":{}}]},{"title":"Example","path":"/zh-CN/components/example","meta":{},"children":[{"path":"/zh-CN/components/example/button","title":"Button","meta":{}},{"path":"/zh-CN/components/example/my-example","title":"MyExample","meta":{}}]},{"title":"Other","path":"/zh-CN/components/other","meta":{},"children":[{"path":"/zh-CN/components/other/container-with-bar","title":"ContainerWithBar","meta":{}},{"path":"/zh-CN/components/other/scroller","title":"Scroller","meta":{}}]}]}},"locales":[{"name":"en-US","label":"English"},{"name":"zh-CN","label":"中文"}],"navs":{"en-US":[{"path":"/pages","title":"Guide","order":1},{"title":"Components","path":"/components"}],"zh-CN":[{"path":"/zh-CN/pages","title":"指南","order":1},{"title":"Components","path":"/zh-CN/components"}]},"title":"xy-element","logo":"/xy-element/logo.png","mode":"site","repoUrl":"https://github.com/xylink-com/xy-element"},
+      ...{"menus":{"en-US":{"*":[{"path":"/","title":"xy-element","meta":{}}],"/pages":[{"path":"/pages/getting-started","title":"Getting Started","meta":{"order":1}},{"path":"/pages/api","title":"API Standards","meta":{}},{"path":"/pages/faq","title":"FAQ","meta":{}},{"path":"/pages/组件库 getting start 总结","title":"组件/工具平台","meta":{}}],"/components":[{"title":"Common","path":"/components/common","meta":{},"children":[{"path":"/components/common/icon","title":"Icon","meta":{}}]},{"title":"DataDisplay","path":"/components/data-display","meta":{},"children":[{"path":"/components/data-display/video-player","title":"VideoPlayer","meta":{}}]},{"title":"Example","path":"/components/example","meta":{},"children":[{"path":"/components/example/button","title":"Button","meta":{}}]},{"title":"Other","path":"/components/other","meta":{},"children":[{"path":"/components/other/container-with-bar","title":"ContainerWithBar","meta":{}},{"path":"/components/other/scroller","title":"Scroller","meta":{}}]}]},"zh-CN":{"*":[{"path":"/zh-CN","title":"xy-element","meta":{}}],"/zh-CN/pages":[{"path":"/zh-CN/pages/getting-started","title":"快速上手","meta":{"order":1}},{"path":"/zh-CN/pages/api","title":"API 规范","meta":{}},{"path":"/zh-CN/pages/faq","title":"FAQ","meta":{}},{"path":"/zh-CN/pages/组件库 getting start 总结","title":"组件/工具平台","meta":{}}],"/zh-CN/components":[{"title":"Common","path":"/zh-CN/components/common","meta":{},"children":[{"path":"/zh-CN/components/common/icon","title":"Icon","meta":{}}]},{"title":"DataDisplay","path":"/zh-CN/components/data-display","meta":{},"children":[{"path":"/zh-CN/components/data-display/video-player","title":"VideoPlayer","meta":{}}]},{"title":"Example","path":"/zh-CN/components/example","meta":{},"children":[{"path":"/zh-CN/components/example/button","title":"Button","meta":{}}]},{"title":"Other","path":"/zh-CN/components/other","meta":{},"children":[{"path":"/zh-CN/components/other/container-with-bar","title":"ContainerWithBar","meta":{}},{"path":"/zh-CN/components/other/scroller","title":"Scroller","meta":{}}]}]}},"locales":[{"name":"en-US","label":"English"},{"name":"zh-CN","label":"中文"}],"navs":{"en-US":[{"path":"/pages","title":"Guide","order":1},{"title":"Components","path":"/components"}],"zh-CN":[{"path":"/zh-CN/pages","title":"指南","order":1},{"title":"Components","path":"/zh-CN/components"}]},"title":"xy-element","logo":"/xy-element/logo.png","mode":"site","repoUrl":"https://github.com/xylink-com/xy-element"},
       ...props,
     }),
     "routes": [
@@ -443,6 +433,198 @@ export function getRoutes() {
           "locale": "zh-CN"
         },
         "title": "快速上手"
+      },
+      {
+        "path": "/pages/组件库 getting start 总结",
+        "component": dynamic({ loader: () => import(/* webpackChunkName: 'guide__pages__组件库 Getting Start 总结.md' */'../../../guide/pages/组件库 Getting Start 总结.md')}),
+        "exact": true,
+        "meta": {
+          "filePath": "guide/pages/组件库 Getting Start 总结.md",
+          "updatedTime": 1615542060167,
+          "slugs": [
+            {
+              "depth": 1,
+              "value": "组件/工具平台",
+              "heading": "组件工具平台"
+            },
+            {
+              "depth": 2,
+              "value": "背景介绍",
+              "heading": "背景介绍"
+            },
+            {
+              "depth": 2,
+              "value": "XY-Element (组件库)",
+              "heading": "xy-element-组件库"
+            },
+            {
+              "depth": 3,
+              "value": "现状",
+              "heading": "现状"
+            },
+            {
+              "depth": 4,
+              "value": "TODO",
+              "heading": "todo"
+            },
+            {
+              "depth": 3,
+              "value": "构架",
+              "heading": "构架"
+            },
+            {
+              "depth": 3,
+              "value": "开发指南",
+              "heading": "开发指南"
+            },
+            {
+              "depth": 4,
+              "value": "拉取项目",
+              "heading": "拉取项目"
+            },
+            {
+              "depth": 4,
+              "value": "安装依赖",
+              "heading": "安装依赖"
+            },
+            {
+              "depth": 4,
+              "value": "生成组件",
+              "heading": "生成组件"
+            },
+            {
+              "depth": 4,
+              "value": "开发组件",
+              "heading": "开发组件"
+            },
+            {
+              "depth": 4,
+              "value": "编写demo",
+              "heading": "编写demo"
+            },
+            {
+              "depth": 4,
+              "value": "编写文档",
+              "heading": "编写文档"
+            },
+            {
+              "depth": 4,
+              "value": "预览开发文档",
+              "heading": "预览开发文档"
+            },
+            {
+              "depth": 4,
+              "value": "测试组件库",
+              "heading": "测试组件库"
+            },
+            {
+              "depth": 4,
+              "value": "打包组件库",
+              "heading": "打包组件库"
+            },
+            {
+              "depth": 4,
+              "value": "发布组件库",
+              "heading": "发布组件库"
+            },
+            {
+              "depth": 4,
+              "value": "打包组件文档",
+              "heading": "打包组件文档"
+            },
+            {
+              "depth": 4,
+              "value": "发布静态文档",
+              "heading": "发布静态文档"
+            },
+            {
+              "depth": 4,
+              "value": "如何使用组件库",
+              "heading": "如何使用组件库"
+            },
+            {
+              "depth": 3,
+              "value": "Q&A",
+              "heading": "qa"
+            },
+            {
+              "depth": 4,
+              "value": "生成的模板文件的详细使用方法？",
+              "heading": "生成的模板文件的详细使用方法？"
+            },
+            {
+              "depth": 4,
+              "value": "组件和文档分别是怎样部署的？",
+              "heading": "组件和文档分别是怎样部署的？"
+            },
+            {
+              "depth": 4,
+              "value": "为什么要同时使用 dumi 和 storybook？",
+              "heading": "为什么要同时使用-dumi-和-storybook？"
+            },
+            {
+              "depth": 4,
+              "value": "怎么更改组件模板？",
+              "heading": "怎么更改组件模板？"
+            },
+            {
+              "depth": 4,
+              "value": "storybook 中开发的 demo 能用于文档中吗？",
+              "heading": "storybook-中开发的-demo-能用于文档中吗？"
+            },
+            {
+              "depth": 4,
+              "value": "文档具体是怎么部署到 GitHub pages的？",
+              "heading": "文档具体是怎么部署到-github-pages的？"
+            },
+            {
+              "depth": 4,
+              "value": "开发人员需要做什么？",
+              "heading": "开发人员需要做什么？"
+            },
+            {
+              "depth": 2,
+              "value": "toolkit (工具库)",
+              "heading": "toolkit-工具库"
+            },
+            {
+              "depth": 3,
+              "value": "现状",
+              "heading": "现状-1"
+            },
+            {
+              "depth": 4,
+              "value": "TODO",
+              "heading": "todo-1"
+            },
+            {
+              "depth": 3,
+              "value": "架构",
+              "heading": "架构"
+            },
+            {
+              "depth": 3,
+              "value": "目录结构",
+              "heading": "目录结构"
+            },
+            {
+              "depth": 3,
+              "value": "计划开发的工具类",
+              "heading": "计划开发的工具类"
+            },
+            {
+              "depth": 2,
+              "value": "演示",
+              "heading": "演示"
+            }
+          ],
+          "title": "组件/工具平台",
+          "nav": {
+            "path": "/pages",
+            "title": "Guide"
+          }
+        },
+        "title": "组件/工具平台"
       },
       {
         "path": "/",
@@ -941,132 +1123,6 @@ export function getRoutes() {
         "title": "Icon"
       },
       {
-        "path": "/components/example/my-example",
-        "component": dynamic({ loader: () => import(/* webpackChunkName: 'components__MyExample__index.en-US.md' */'../../components/MyExample/index.en-US.md')}),
-        "exact": true,
-        "meta": {
-          "filePath": "src/components/MyExample/index.en-US.md",
-          "updatedTime": 1615536375536,
-          "title": "MyExample",
-          "nav": {
-            "title": "Components",
-            "path": "/components"
-          },
-          "group": {
-            "title": "Example",
-            "path": "/components/example"
-          },
-          "legacy": "/example/component-name",
-          "slugs": [
-            {
-              "depth": 1,
-              "value": "MyExample",
-              "heading": "myexample"
-            },
-            {
-              "depth": 2,
-              "value": "Examples",
-              "heading": "examples"
-            },
-            {
-              "depth": 2,
-              "value": "Usage",
-              "heading": "usage"
-            },
-            {
-              "depth": 3,
-              "value": "Params",
-              "heading": "params"
-            },
-            {
-              "depth": 3,
-              "value": "Types",
-              "heading": "types"
-            },
-            {
-              "depth": 3,
-              "value": "WORKFLOW",
-              "heading": "workflow"
-            },
-            {
-              "depth": 4,
-              "value": "TOFIX",
-              "heading": "tofix"
-            },
-            {
-              "depth": 4,
-              "value": "TODO",
-              "heading": "todo"
-            }
-          ],
-          "locale": "en-US"
-        },
-        "title": "MyExample"
-      },
-      {
-        "path": "/zh-CN/components/example/my-example",
-        "component": dynamic({ loader: () => import(/* webpackChunkName: 'components__MyExample__index.zh-CN.md' */'../../components/MyExample/index.zh-CN.md')}),
-        "exact": true,
-        "meta": {
-          "filePath": "src/components/MyExample/index.zh-CN.md",
-          "updatedTime": 1615536700122,
-          "title": "MyExample",
-          "nav": {
-            "title": "Components",
-            "path": "/zh-CN/components"
-          },
-          "group": {
-            "title": "Example",
-            "path": "/zh-CN/components/example"
-          },
-          "legacy": "/example/component-name",
-          "slugs": [
-            {
-              "depth": 1,
-              "value": "MyExample",
-              "heading": "myexample"
-            },
-            {
-              "depth": 2,
-              "value": "示例",
-              "heading": "示例"
-            },
-            {
-              "depth": 2,
-              "value": "用法",
-              "heading": "用法"
-            },
-            {
-              "depth": 3,
-              "value": "参数",
-              "heading": "参数"
-            },
-            {
-              "depth": 3,
-              "value": "接口与类型",
-              "heading": "接口与类型"
-            },
-            {
-              "depth": 3,
-              "value": "工作流",
-              "heading": "工作流"
-            },
-            {
-              "depth": 4,
-              "value": "TOFIX",
-              "heading": "tofix"
-            },
-            {
-              "depth": 4,
-              "value": "TODO",
-              "heading": "todo"
-            }
-          ],
-          "locale": "zh-CN"
-        },
-        "title": "MyExample"
-      },
-      {
         "path": "/components/other/scroller",
         "component": dynamic({ loader: () => import(/* webpackChunkName: 'components__Scroller__index.en-US.md' */'../../components/Scroller/index.en-US.md')}),
         "exact": true,
@@ -1271,6 +1327,199 @@ export function getRoutes() {
         "title": "VideoPlayer"
       },
       {
+        "path": "/zh-CN/pages/组件库 getting start 总结",
+        "component": dynamic({ loader: () => import(/* webpackChunkName: 'guide__pages__组件库 Getting Start 总结.md' */'../../../guide/pages/组件库 Getting Start 总结.md')}),
+        "exact": true,
+        "meta": {
+          "filePath": "guide/pages/组件库 Getting Start 总结.md",
+          "updatedTime": 1615542060167,
+          "slugs": [
+            {
+              "depth": 1,
+              "value": "组件/工具平台",
+              "heading": "组件工具平台"
+            },
+            {
+              "depth": 2,
+              "value": "背景介绍",
+              "heading": "背景介绍"
+            },
+            {
+              "depth": 2,
+              "value": "XY-Element (组件库)",
+              "heading": "xy-element-组件库"
+            },
+            {
+              "depth": 3,
+              "value": "现状",
+              "heading": "现状"
+            },
+            {
+              "depth": 4,
+              "value": "TODO",
+              "heading": "todo"
+            },
+            {
+              "depth": 3,
+              "value": "构架",
+              "heading": "构架"
+            },
+            {
+              "depth": 3,
+              "value": "开发指南",
+              "heading": "开发指南"
+            },
+            {
+              "depth": 4,
+              "value": "拉取项目",
+              "heading": "拉取项目"
+            },
+            {
+              "depth": 4,
+              "value": "安装依赖",
+              "heading": "安装依赖"
+            },
+            {
+              "depth": 4,
+              "value": "生成组件",
+              "heading": "生成组件"
+            },
+            {
+              "depth": 4,
+              "value": "开发组件",
+              "heading": "开发组件"
+            },
+            {
+              "depth": 4,
+              "value": "编写demo",
+              "heading": "编写demo"
+            },
+            {
+              "depth": 4,
+              "value": "编写文档",
+              "heading": "编写文档"
+            },
+            {
+              "depth": 4,
+              "value": "预览开发文档",
+              "heading": "预览开发文档"
+            },
+            {
+              "depth": 4,
+              "value": "测试组件库",
+              "heading": "测试组件库"
+            },
+            {
+              "depth": 4,
+              "value": "打包组件库",
+              "heading": "打包组件库"
+            },
+            {
+              "depth": 4,
+              "value": "发布组件库",
+              "heading": "发布组件库"
+            },
+            {
+              "depth": 4,
+              "value": "打包组件文档",
+              "heading": "打包组件文档"
+            },
+            {
+              "depth": 4,
+              "value": "发布静态文档",
+              "heading": "发布静态文档"
+            },
+            {
+              "depth": 4,
+              "value": "如何使用组件库",
+              "heading": "如何使用组件库"
+            },
+            {
+              "depth": 3,
+              "value": "Q&A",
+              "heading": "qa"
+            },
+            {
+              "depth": 4,
+              "value": "生成的模板文件的详细使用方法？",
+              "heading": "生成的模板文件的详细使用方法？"
+            },
+            {
+              "depth": 4,
+              "value": "组件和文档分别是怎样部署的？",
+              "heading": "组件和文档分别是怎样部署的？"
+            },
+            {
+              "depth": 4,
+              "value": "为什么要同时使用 dumi 和 storybook？",
+              "heading": "为什么要同时使用-dumi-和-storybook？"
+            },
+            {
+              "depth": 4,
+              "value": "怎么更改组件模板？",
+              "heading": "怎么更改组件模板？"
+            },
+            {
+              "depth": 4,
+              "value": "storybook 中开发的 demo 能用于文档中吗？",
+              "heading": "storybook-中开发的-demo-能用于文档中吗？"
+            },
+            {
+              "depth": 4,
+              "value": "文档具体是怎么部署到 GitHub pages的？",
+              "heading": "文档具体是怎么部署到-github-pages的？"
+            },
+            {
+              "depth": 4,
+              "value": "开发人员需要做什么？",
+              "heading": "开发人员需要做什么？"
+            },
+            {
+              "depth": 2,
+              "value": "toolkit (工具库)",
+              "heading": "toolkit-工具库"
+            },
+            {
+              "depth": 3,
+              "value": "现状",
+              "heading": "现状-1"
+            },
+            {
+              "depth": 4,
+              "value": "TODO",
+              "heading": "todo-1"
+            },
+            {
+              "depth": 3,
+              "value": "架构",
+              "heading": "架构"
+            },
+            {
+              "depth": 3,
+              "value": "目录结构",
+              "heading": "目录结构"
+            },
+            {
+              "depth": 3,
+              "value": "计划开发的工具类",
+              "heading": "计划开发的工具类"
+            },
+            {
+              "depth": 2,
+              "value": "演示",
+              "heading": "演示"
+            }
+          ],
+          "title": "组件/工具平台",
+          "nav": {
+            "path": "/zh-CN/pages",
+            "title": "指南"
+          },
+          "locale": "zh-CN"
+        },
+        "title": "组件/工具平台"
+      },
+      {
         "path": "/zh-CN/components/other/scroller",
         "component": dynamic({ loader: () => import(/* webpackChunkName: 'components__Scroller__index.en-US.md' */'../../components/Scroller/index.en-US.md')}),
         "exact": true,
@@ -1360,7 +1609,7 @@ export function getRoutes() {
       {
         "path": "/example/component-name",
         "exact": true,
-        "redirect": "/zh-CN/components/example/my-example"
+        "redirect": "/zh-CN/components/example/button"
       },
       {
         "path": "/zh-CN/components/example",
