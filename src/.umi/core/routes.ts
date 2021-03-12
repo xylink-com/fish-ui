@@ -18,12 +18,17 @@ export function getRoutes() {
   },
   {
     "path": "/_demos/basic-2",
-    "component": dynamic({ loader: () => import(/* webpackChunkName: 'components__Example__demo__basic' */'../../components/Example/demo/basic.tsx')}),
+    "component": dynamic({ loader: () => import(/* webpackChunkName: 'components__Icon__demo__basic' */'../../components/Icon/demo/basic.tsx')}),
     "exact": true
   },
   {
     "path": "/_demos/basic-3",
-    "component": dynamic({ loader: () => import(/* webpackChunkName: 'components__Icon__demo__basic' */'../../components/Icon/demo/basic.tsx')}),
+    "component": dynamic({ loader: () => import(/* webpackChunkName: 'components__MyExample__demo__basic' */'../../components/MyExample/demo/basic.tsx')}),
+    "exact": true
+  },
+  {
+    "path": "/_demos/sec",
+    "component": dynamic({ loader: () => import(/* webpackChunkName: 'components__MyExample__demo__sec' */'../../components/MyExample/demo/sec.tsx')}),
     "exact": true
   },
   {
@@ -39,7 +44,7 @@ export function getRoutes() {
   {
     "path": "/",
     "component": (props) => require('react').createElement(require('../../../node_modules/@umijs/preset-dumi/lib/themes/default/layout.js').default, {
-      ...{"menus":{"en-US":{"*":[{"path":"/","title":"xy-element","meta":{}}],"/pages":[{"path":"/pages/getting-started","title":"Getting Started","meta":{"order":1}},{"path":"/pages/api","title":"API Standards","meta":{}},{"path":"/pages/faq","title":"FAQ","meta":{}}],"/components":[{"title":"Common","path":"/components/common","meta":{},"children":[{"path":"/components/common/icon","title":"Icon","meta":{}}]},{"title":"DataDisplay","path":"/components/data-display","meta":{},"children":[{"path":"/components/data-display/video-player","title":"VideoPlayer","meta":{}}]},{"title":"Example","path":"/components/example","meta":{},"children":[{"path":"/components/example","title":"Example","meta":{}},{"path":"/components/example/button","title":"Button","meta":{}}]},{"title":"Other","path":"/components/other","meta":{},"children":[{"path":"/components/other/container-with-bar","title":"ContainerWithBar","meta":{}},{"path":"/components/other/scroller","title":"Scroller","meta":{}}]}]},"zh-CN":{"*":[{"path":"/zh-CN","title":"xy-element","meta":{}}],"/zh-CN/pages":[{"path":"/zh-CN/pages/getting-started","title":"快速上手","meta":{"order":1}},{"path":"/zh-CN/pages/api","title":"API 规范","meta":{}},{"path":"/zh-CN/pages/faq","title":"FAQ","meta":{}}],"/zh-CN/components":[{"title":"Common","path":"/zh-CN/components/common","meta":{},"children":[{"path":"/zh-CN/components/common/icon","title":"Icon","meta":{}}]},{"title":"DataDisplay","path":"/zh-CN/components/data-display","meta":{},"children":[{"path":"/zh-CN/components/data-display/video-player","title":"VideoPlayer","meta":{}}]},{"title":"Example","path":"/zh-CN/components/example","meta":{},"children":[{"path":"/zh-CN/components/example","title":"Example","meta":{}},{"path":"/zh-CN/components/example/button","title":"Button","meta":{}}]},{"title":"Other","path":"/zh-CN/components/other","meta":{},"children":[{"path":"/zh-CN/components/other/container-with-bar","title":"ContainerWithBar","meta":{}},{"path":"/zh-CN/components/other/scroller","title":"Scroller","meta":{}}]}]}},"locales":[{"name":"en-US","label":"English"},{"name":"zh-CN","label":"中文"}],"navs":{"en-US":[{"path":"/pages","title":"Guide","order":1},{"title":"Components","path":"/components"}],"zh-CN":[{"path":"/zh-CN/pages","title":"指南","order":1},{"title":"Components","path":"/zh-CN/components"}]},"title":"xy-element","logo":"/xy-element/logo.png","mode":"site","repoUrl":"https://github.com/xylink-com/xy-element"},
+      ...{"menus":{"en-US":{"*":[{"path":"/","title":"xy-element","meta":{}}],"/pages":[{"path":"/pages/getting-started","title":"Getting Started","meta":{"order":1}},{"path":"/pages/api","title":"API Standards","meta":{}},{"path":"/pages/faq","title":"FAQ","meta":{}}],"/components":[{"title":"Common","path":"/components/common","meta":{},"children":[{"path":"/components/common/icon","title":"Icon","meta":{}}]},{"title":"DataDisplay","path":"/components/data-display","meta":{},"children":[{"path":"/components/data-display/video-player","title":"VideoPlayer","meta":{}}]},{"title":"Example","path":"/components/example","meta":{},"children":[{"path":"/components/example/button","title":"Button","meta":{}},{"path":"/components/example/my-example","title":"MyExample","meta":{}}]},{"title":"Other","path":"/components/other","meta":{},"children":[{"path":"/components/other/container-with-bar","title":"ContainerWithBar","meta":{}},{"path":"/components/other/scroller","title":"Scroller","meta":{}}]}]},"zh-CN":{"*":[{"path":"/zh-CN","title":"xy-element","meta":{}}],"/zh-CN/pages":[{"path":"/zh-CN/pages/getting-started","title":"快速上手","meta":{"order":1}},{"path":"/zh-CN/pages/api","title":"API 规范","meta":{}},{"path":"/zh-CN/pages/faq","title":"FAQ","meta":{}}],"/zh-CN/components":[{"title":"Common","path":"/zh-CN/components/common","meta":{},"children":[{"path":"/zh-CN/components/common/icon","title":"Icon","meta":{}}]},{"title":"DataDisplay","path":"/zh-CN/components/data-display","meta":{},"children":[{"path":"/zh-CN/components/data-display/video-player","title":"VideoPlayer","meta":{}}]},{"title":"Example","path":"/zh-CN/components/example","meta":{},"children":[{"path":"/zh-CN/components/example/button","title":"Button","meta":{}},{"path":"/zh-CN/components/example/my-example","title":"MyExample","meta":{}}]},{"title":"Other","path":"/zh-CN/components/other","meta":{},"children":[{"path":"/zh-CN/components/other/container-with-bar","title":"ContainerWithBar","meta":{}},{"path":"/zh-CN/components/other/scroller","title":"Scroller","meta":{}}]}]}},"locales":[{"name":"en-US","label":"English"},{"name":"zh-CN","label":"中文"}],"navs":{"en-US":[{"path":"/pages","title":"Guide","order":1},{"title":"Components","path":"/components"}],"zh-CN":[{"path":"/zh-CN/pages","title":"指南","order":1},{"title":"Components","path":"/zh-CN/components"}]},"title":"xy-element","logo":"/xy-element/logo.png","mode":"site","repoUrl":"https://github.com/xylink-com/xy-element"},
       ...props,
     }),
     "routes": [
@@ -800,132 +805,6 @@ export function getRoutes() {
         "title": "ContainerWithBar"
       },
       {
-        "path": "/components/example",
-        "component": dynamic({ loader: () => import(/* webpackChunkName: 'components__Example__index.en-US.md' */'../../components/Example/index.en-US.md')}),
-        "exact": true,
-        "meta": {
-          "filePath": "src/components/Example/index.en-US.md",
-          "updatedTime": 1615533019000,
-          "title": "Example",
-          "nav": {
-            "title": "Components",
-            "path": "/components"
-          },
-          "group": {
-            "title": "Example",
-            "path": "/components/example"
-          },
-          "legacy": "/example/component-name",
-          "slugs": [
-            {
-              "depth": 1,
-              "value": "Example",
-              "heading": "example"
-            },
-            {
-              "depth": 2,
-              "value": "Examples",
-              "heading": "examples"
-            },
-            {
-              "depth": 2,
-              "value": "Usage",
-              "heading": "usage"
-            },
-            {
-              "depth": 3,
-              "value": "Params",
-              "heading": "params"
-            },
-            {
-              "depth": 3,
-              "value": "Types",
-              "heading": "types"
-            },
-            {
-              "depth": 3,
-              "value": "WORKFLOW",
-              "heading": "workflow"
-            },
-            {
-              "depth": 4,
-              "value": "TOFIX",
-              "heading": "tofix"
-            },
-            {
-              "depth": 4,
-              "value": "TODO",
-              "heading": "todo"
-            }
-          ],
-          "locale": "en-US"
-        },
-        "title": "Example"
-      },
-      {
-        "path": "/zh-CN/components/example",
-        "component": dynamic({ loader: () => import(/* webpackChunkName: 'components__Example__index.zh-CN.md' */'../../components/Example/index.zh-CN.md')}),
-        "exact": true,
-        "meta": {
-          "filePath": "src/components/Example/index.zh-CN.md",
-          "updatedTime": 1615533019000,
-          "title": "Example",
-          "nav": {
-            "title": "Components",
-            "path": "/zh-CN/components"
-          },
-          "group": {
-            "title": "Example",
-            "path": "/zh-CN/components/example"
-          },
-          "legacy": "/example/component-name",
-          "slugs": [
-            {
-              "depth": 1,
-              "value": "Example",
-              "heading": "example"
-            },
-            {
-              "depth": 2,
-              "value": "示例",
-              "heading": "示例"
-            },
-            {
-              "depth": 2,
-              "value": "用法",
-              "heading": "用法"
-            },
-            {
-              "depth": 3,
-              "value": "参数",
-              "heading": "参数"
-            },
-            {
-              "depth": 3,
-              "value": "接口与类型",
-              "heading": "接口与类型"
-            },
-            {
-              "depth": 3,
-              "value": "工作流",
-              "heading": "工作流"
-            },
-            {
-              "depth": 4,
-              "value": "TOFIX",
-              "heading": "tofix"
-            },
-            {
-              "depth": 4,
-              "value": "TODO",
-              "heading": "todo"
-            }
-          ],
-          "locale": "zh-CN"
-        },
-        "title": "Example"
-      },
-      {
         "path": "/components/common/icon",
         "component": dynamic({ loader: () => import(/* webpackChunkName: 'components__Icon__index.en-US.md' */'../../components/Icon/index.en-US.md')}),
         "exact": true,
@@ -1060,6 +939,132 @@ export function getRoutes() {
           "locale": "zh-CN"
         },
         "title": "Icon"
+      },
+      {
+        "path": "/components/example/my-example",
+        "component": dynamic({ loader: () => import(/* webpackChunkName: 'components__MyExample__index.en-US.md' */'../../components/MyExample/index.en-US.md')}),
+        "exact": true,
+        "meta": {
+          "filePath": "src/components/MyExample/index.en-US.md",
+          "updatedTime": 1615536375536,
+          "title": "MyExample",
+          "nav": {
+            "title": "Components",
+            "path": "/components"
+          },
+          "group": {
+            "title": "Example",
+            "path": "/components/example"
+          },
+          "legacy": "/example/component-name",
+          "slugs": [
+            {
+              "depth": 1,
+              "value": "MyExample",
+              "heading": "myexample"
+            },
+            {
+              "depth": 2,
+              "value": "Examples",
+              "heading": "examples"
+            },
+            {
+              "depth": 2,
+              "value": "Usage",
+              "heading": "usage"
+            },
+            {
+              "depth": 3,
+              "value": "Params",
+              "heading": "params"
+            },
+            {
+              "depth": 3,
+              "value": "Types",
+              "heading": "types"
+            },
+            {
+              "depth": 3,
+              "value": "WORKFLOW",
+              "heading": "workflow"
+            },
+            {
+              "depth": 4,
+              "value": "TOFIX",
+              "heading": "tofix"
+            },
+            {
+              "depth": 4,
+              "value": "TODO",
+              "heading": "todo"
+            }
+          ],
+          "locale": "en-US"
+        },
+        "title": "MyExample"
+      },
+      {
+        "path": "/zh-CN/components/example/my-example",
+        "component": dynamic({ loader: () => import(/* webpackChunkName: 'components__MyExample__index.zh-CN.md' */'../../components/MyExample/index.zh-CN.md')}),
+        "exact": true,
+        "meta": {
+          "filePath": "src/components/MyExample/index.zh-CN.md",
+          "updatedTime": 1615536700122,
+          "title": "MyExample",
+          "nav": {
+            "title": "Components",
+            "path": "/zh-CN/components"
+          },
+          "group": {
+            "title": "Example",
+            "path": "/zh-CN/components/example"
+          },
+          "legacy": "/example/component-name",
+          "slugs": [
+            {
+              "depth": 1,
+              "value": "MyExample",
+              "heading": "myexample"
+            },
+            {
+              "depth": 2,
+              "value": "示例",
+              "heading": "示例"
+            },
+            {
+              "depth": 2,
+              "value": "用法",
+              "heading": "用法"
+            },
+            {
+              "depth": 3,
+              "value": "参数",
+              "heading": "参数"
+            },
+            {
+              "depth": 3,
+              "value": "接口与类型",
+              "heading": "接口与类型"
+            },
+            {
+              "depth": 3,
+              "value": "工作流",
+              "heading": "工作流"
+            },
+            {
+              "depth": 4,
+              "value": "TOFIX",
+              "heading": "tofix"
+            },
+            {
+              "depth": 4,
+              "value": "TODO",
+              "heading": "todo"
+            }
+          ],
+          "locale": "zh-CN"
+        },
+        "title": "MyExample"
       },
       {
         "path": "/components/other/scroller",
@@ -1341,6 +1346,12 @@ export function getRoutes() {
         "redirect": "/zh-CN/pages/getting-started"
       },
       {
+        "path": "/components/example",
+        "meta": {},
+        "exact": true,
+        "redirect": "/components/example/button"
+      },
+      {
         "path": "/components",
         "meta": {},
         "exact": true,
@@ -1349,7 +1360,13 @@ export function getRoutes() {
       {
         "path": "/example/component-name",
         "exact": true,
-        "redirect": "/zh-CN/components/example"
+        "redirect": "/zh-CN/components/example/my-example"
+      },
+      {
+        "path": "/zh-CN/components/example",
+        "meta": {},
+        "exact": true,
+        "redirect": "/zh-CN/components/example/button"
       },
       {
         "path": "/zh-CN/components",
